@@ -1,4 +1,5 @@
 ﻿<Solution>
-  <Project Path="Assembly-CSharp.csproj" />
-  <Project Path="Assembly-CSharp-Editor.csproj" />
+  <Project Path="Elringus.Naninovel.Runtime.csproj" />
+  <Project Path="Elringus.Naninovel.Editor.csproj" />
+  <Project Path="Elringus.Naninovel.E2E.csproj" />
 </Solution>

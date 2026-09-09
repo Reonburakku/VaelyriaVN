@@ -5,7 +5,7 @@ Novela visual de romance/misterio (Vaelyria/Vantia). Desarrollador solo. Este ar
 
 ## Estructura de carpetas
 
-- `02_Proyecto-Unity/` — el proyecto de Unity + Naninovel. Todo el trabajo de código y scripts `.nani` pasa acá.
+- `02_Proyecto-Unity/Vaelyria` — el proyecto de Unity + Naninovel. Todo el trabajo de código y scripts `.nani` pasa acá.
 - `00_Documentacion/` — **solo de referencia**. Guion, fichas de personajes, listas de assets, presupuesto. No escribir ni modificar nada acá salvo que se pida explícitamente.
 
 ## Motor y stack técnico
@@ -26,7 +26,7 @@ Dentro de `02_Proyecto-Unity/Assets/Resources/Naninovel/` (convención por defec
 
 Si un asset está en una subcarpeta, se referencia en los scripts con `/`: por ejemplo, un archivo en `Audio/BGM/TemaCampus.wav` se referencia como `BGM/TemaCampus`.
 
-🔶 Los scripts `.nani` en sí pueden vivir en cualquier carpeta del proyecto (deben compartir una única raíz) — falta decidir dónde exactamente; sugerencia por defecto: `Assets/Scenario/`.
+Los scripts `.nani` en sí pueden vivir en cualquier carpeta del proyecto (deben compartir una única raíz) ; sugerencia por defecto: `Assets/Scenario/`.
 
 ## Documentos de referencia (dentro de `00_Documentacion/`)
 
