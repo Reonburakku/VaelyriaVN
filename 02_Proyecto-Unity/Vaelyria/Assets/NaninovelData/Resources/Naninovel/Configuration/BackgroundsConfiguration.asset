@@ -19,7 +19,7 @@ MonoBehaviour:
   ZOffset: 100
   ZStep: 0.1
   DefaultMetadata:
-    Implementation: Naninovel.PlaceholderBackground, Elringus.Naninovel.Runtime,
+    Implementation: Naninovel.SpriteBackground, Elringus.Naninovel.Runtime,
       Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
     Loader:
       PathPrefix: Backgrounds
@@ -53,7 +53,7 @@ MonoBehaviour:
     ids:
     - MainBackground
     metas:
-    - Implementation: Naninovel.PlaceholderBackground, Elringus.Naninovel.Runtime,
+    - Implementation: Naninovel.SpriteBackground, Elringus.Naninovel.Runtime,
         Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       Loader:
         PathPrefix: Backgrounds

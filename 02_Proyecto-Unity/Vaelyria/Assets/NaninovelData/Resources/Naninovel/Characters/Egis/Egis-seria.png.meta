@@ -116,10 +116,10 @@ TextureImporter:
       name: Egis-seria_0
       rect:
         serializedVersion: 2
-        x: 72
+        x: 121
         y: 0
-        width: 741
-        height: 1665
+        width: 736
+        height: 1655
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

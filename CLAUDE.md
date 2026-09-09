@@ -1,4 +1,3 @@
-
 # NovelaVisual — Contexto del proyecto
 
 Novela visual de romance/misterio (Vaelyria/Vantia). Desarrollador solo. Este archivo es el punto de partida para cualquier sesión de Claude Code en esta carpeta — para detalle completo, siempre remitir a los documentos referenciados abajo antes de asumir nada.
@@ -16,10 +15,10 @@ Novela visual de romance/misterio (Vaelyria/Vantia). Desarrollador solo. Este ar
 
 ## Ubicación de assets generados
 
-Dentro de `02_Proyecto-Unity/Assets/Resources/Naninovel/` (convención por defecto de Naninovel — cualquier archivo puesto ahí queda disponible en los scripts sin necesidad de registrarlo a mano, la vía más simple para un desarrollador solo):
+Dentro de `02_Proyecto-Unity/Vaelyria/Assets/NaninovelData/Resources/Naninovel/` (convención por defecto de Naninovel — cualquier archivo puesto ahí queda disponible en los scripts sin necesidad de registrarlo a mano, la vía más simple para un desarrollador solo):
 
-- `Backgrounds/` — fondos (nombres en `Lista-Fondos.md`)
-- `Characters/` — sprites de personajes, una subcarpeta por personaje (nombres de expresión en `Lista-Expresiones-Sprites.md`)
+- `Backgrounds/MainBackground/` — fondos (nombres en `Lista-Fondos.md`). **Van dentro de la subcarpeta `MainBackground/`, no sueltos en `Backgrounds/`**: el actor de fondo único (`MainBackground`) resuelve sus recursos como `Backgrounds/<actorId>/<apariencia>`, igual que un personaje — dejarlos sueltos en `Backgrounds/` hace que Naninovel no encuentre ninguno (se ve un fondo rojo sólido, el placeholder de recurso faltante). En los scripts se siguen referenciando solo por nombre de apariencia (ej. `@back "Historia - Manana"`), sin mencionar `MainBackground/`.
+- `Characters/` — sprites de personajes, una subcarpeta por personaje (nombres de expresión en `Lista-Expresiones-Sprites.md`). PNG con fondo transparente real (canal alfa) — el fondo blanco de generación se remueve con IOPaint antes de copiar el archivo acá, nunca se importa con fondo blanco sólido.
 - `Audio/` — BGM y SFX (contenido en `Lista-Audio.md`); se pueden organizar en subcarpetas, ej. `Audio/BGM/`, `Audio/SFX/`
 - `Voice/` — interjecciones de voz por heroína y emoción (`Lista-Voces.md`)
 - `Text/` — documentos de managed text (se generan con la herramienta de Naninovel, Naninovel → Tools → Managed Text — no crear a mano)
@@ -27,6 +26,24 @@ Dentro de `02_Proyecto-Unity/Assets/Resources/Naninovel/` (convención por defec
 Si un asset está en una subcarpeta, se referencia en los scripts con `/`: por ejemplo, un archivo en `Audio/BGM/TemaCampus.wav` se referencia como `BGM/TemaCampus`.
 
 Los scripts `.nani` en sí pueden vivir en cualquier carpeta del proyecto (deben compartir una única raíz) ; sugerencia por defecto: `Assets/Scenario/`.
+
+**Implementación de actores (Backgrounds/Characters)**: en `Configuration/BackgroundsConfiguration.asset` y `Configuration/CharactersConfiguration.asset`, el campo `Implementation` de `DefaultMetadata` (y de cualquier entrada por-actor en `Metadata`) debe ser `Naninovel.SpriteBackground` / `Naninovel.SpriteCharacter`. El proyecto arrancó con `Naninovel.PlaceholderBackground` / `Naninovel.PlaceholderCharacter` (la implementación de ejemplo que trae Naninovel por defecto, la misma que usan `Entry.nani`/`Title.nani`), que ignora cualquier sprite real y dibuja una figura/color genérico — si en algún momento se resetea esta configuración o se agrega un actor nuevo, hay que revisar que no vuelva a quedar en `Placeholder*`.
+
+**Protagonista como personaje sin sprite**: el protagonista no tiene carpeta en `Characters/` (no se muestra en pantalla, es POV). Sus líneas en los scripts (`Protagonista: texto`) igual necesitan una entrada en `CharactersConfiguration.asset` → `Metadata` con `Implementation: Naninovel.NarratorCharacter` (la implementación nativa de Naninovel para personajes sin presencia en escena, nunca intenta cargar sprite) y `DisplayName: '{Nombre}'` — Naninovel evalúa como expresión cualquier `DisplayName` envuelto en `{ }`, así que esto hace que el cuadro de diálogo muestre el nombre que haya elegido el jugador (variable `Nombre`, seteada vía `@input` en la Escena 1) en vez del literal "Protagonista". Se reevalúa en cada línea, así que también cubre pensamientos/asides del protagonista sin configuración aparte.
+
+**Nombres ocultos hasta la revelación en escena (Egis, Hazel, Marr)**: estas tres heroínas/Marr muestran `"???"` como nombre de autor hasta que se presentan por su nombre dentro de la propia escena — mismo mecanismo de `DisplayName` atado a variable que Protagonista, pero con un valor inicial que cambia a mitad de escena en vez de fijo. `CharactersConfiguration.asset` → `Metadata` ya tiene las tres entradas (`Marr` → `'{NombreMarr}'`, `Egis` → `'{NombreEgis}'`, `Hazel` → `'{NombreHazel}'`). Patrón a seguir en los scripts (ya aplicado en Marr, Escena 1 — `Assets/Scenario/Prologo_Escena1.nani`):
+
+- Justo antes de la primera aparición/línea del personaje: `@set NombreX="???"`.
+- Justo después de la línea donde el personaje dice su propio nombre (esa línea todavía se muestra con "???" como hablante — recién la siguiente ya usa el nombre real): `@set NombreX="<Nombre revelado>"`.
+- **Pendiente**: Egis (`@set NombreEgis="???"` al principio de la Escena 3 de `Prologo.md`, `@set NombreEgis="Egis"` en su línea "Egis.") y Hazel (`@set NombreHazel="???"` al principio de la Escena 2.3, `@set NombreHazel="Hazel"` cuando se presente) — ninguna de las dos escenas está escrita todavía como `.nani`; aplicar este patrón cuando se implementen.
+
+**Paleta de color de la UI**: la interfaz por defecto de Naninovel (grises) se recoloreó a tonos azules. El color de acento/paneles elegido y confirmado por el usuario es el oficial del proyecto — usar este valor para cualquier panel o elemento de UI nuevo:
+
+- **Hex exacto: `#0084FF`**
+- RGBA (float, como lo serializa Unity): `{r: 0, g: 0.5176471, b: 1, a: 1}`
+- Aplicado de forma consistente a todos los paneles que antes eran grises: `TextPanel` y `AuthorNamePanel` del cuadro de diálogo, y el resto de paneles equivalentes en `DefaultUI/*.prefab` y `ChoiceHandlers/*.prefab` (título, pausa, guardado, ajustes, tips, confirmación, etc.) — tanto en el paquete (`Packages/com.elringus.naninovel/Prefabs/`) como en la copia de proyecto de `Dialogue.prefab`.
+- El override del cuadro de diálogo vive en `Assets/NaninovelData/Resources/Naninovel/TextPrinters/Dialogue.prefab` (GameObject `TextPanel`/`AuthorNamePanel` → componente `Image` → `Color`). Es la copia de proyecto que sobreescribe el `Dialogue.prefab` del paquete — los overrides de recursos de Naninovel van en `Resources/Naninovel/<PathPrefix>/`, no en `UI/` (esa carpeta es solo para menús: título, pausa, ajustes, etc., categoría separada de `TextPrinters/`).
+- Nota de Unity: los cambios a este `.prefab` no se reflejan en una sesión de Play Mode ya iniciada — hay que parar y volver a darle Play después de editarlo.
 
 ## Documentos de referencia (dentro de `00_Documentacion/`)
 

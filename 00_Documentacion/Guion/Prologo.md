@@ -6,7 +6,7 @@ Prólogo — Guion final (Borrador 9)
 >
 > **Revisión aplicada sobre este Borrador 9**: corrección ortográfica, dos restos de voseo pasados a tuteo ("tenés"→"tienes", "buscás"→"buscas"), una acotación de tono duplicada, y un "Valirya" tratado como typo de "Vaelyria" (según la regla ya acordada). El contenido narrativo no se tocó — ver el resto de la conversación para los puntos que sí requieren una decisión tuya antes de tocarlos.
 >
-> Notas técnicas para Naninovel (implementación en tarea 15) marcadas entre corchetes en cursiva. Su nombre real lo define el jugador vía variable — donde haga falta pronunciarlo en diálogo ajeno, se marca `{Nombre}`.
+> Notas técnicas para Naninovel (implementación en tarea 15) marcadas entre corchetes en cursiva. Su nombre real lo define el jugador vía variable — donde haga falta pronunciarlo en diálogo ajeno, se marca `{Nombre}`. El nombre de Egis usa el mismo mecanismo de variable (name binding) pero en sentido inverso — empieza oculto ("???") y se revela a mitad de la Escena 3; ver las notas técnicas puntuales en esa escena.
 
 ---
 
@@ -195,6 +195,9 @@ Un grupo pequeño cruza la explanada entre risas, son bastante llamativos, deben
 
 *[Nota de arte/dirección: sprite de Agnes = "Sonrisa confiada" durante este primer vistazo.]*
 
+**PROTAGONISTA** *(pensamiento)*
+Tengo que admitir que es muy linda.
+
 **ESTUDIANTE 1 (VOZ ENTRE EL GRUPO)**
 ...te digo que Marr tiene un alumno nuevo preguntando por una ciudad que no existe, algo como Va, Vael...
 
@@ -225,6 +228,8 @@ Estoy solo entre las estanterías de la sección de historia regional, en la bib
 Veo venir al final del pasillo a una chica. Recordaría haberla visto anteriormente, su largo cabello blanco y su traje elegante no pasarían desapercibidos. Se queda a una distancia prudente, lo suficientemente cerca para hablar sin subir la voz, y lo suficientemente lejos para que no exista posibilidad de contacto, parece que sabe medir el espacio perfectamente.
 
 *[Nota de arte/dirección: sprite de Egis = "Seria" desde su entrada hasta el cambio a "Tensa" más abajo.]*
+
+*[Nota técnica para Naninovel: el jugador todavía no conoce el nombre de Egis en este punto — usar name binding (Display Name atado a una variable, ej. {NombreEgis}) en vez de un nombre fijo en la configuración del personaje. Al principio de esta escena, antes de su primera línea: `@set NombreEgis="???"`. El cambio a su nombre real va marcado más abajo, en el momento exacto donde se lo dice al protagonista — no antes.]*
 
 **EGIS**
 Eres el que anda preguntando por una ciudad que nadie conoce, ¿cierto?
@@ -332,6 +337,8 @@ Se da media vuelta para irse.
 
 **EGIS**
 Egis.
+
+*[Nota técnica para Naninovel: acá se revela el nombre — `@set NombreEgis="Egis"`, justo antes o junto con esta línea. De acá en adelante (resto del prólogo y toda su ruta) el Display Name ya muestra "Egis" en vez de "???" automáticamente.]*
 
 *[Nota de arte/dirección: sprite de Egis = "Mirada hacia atrás" en este momento.]*
 

@@ -25,6 +25,12 @@
             "group": ""
         },
         {
+            "guid": "b5e7b07ae0b747fcb57917cb61f4d320",
+            "prefix": "Scripts",
+            "path": "Prologo_Escena1",
+            "group": ""
+        },
+        {
             "guid": "7a84b296c04a24341a526f1b612b17a2",
             "prefix": "Scripts",
             "path": "Title",
@@ -109,7 +115,7 @@
             "group": "TextPrinters/024d648f-df39-4c71-af2a-e866f3ddc928"
         },
         {
-            "guid": "1bc08ccd31adff6439e97161aa6e1d8b",
+            "guid": "9cf22cdf80ac4162ab8cbf0c591b6571",
             "prefix": "TextPrinters",
             "path": "Dialogue",
             "group": "TextPrinters/ba67445d-f6a8-4d3a-ba00-c6dcaa5a579a"
