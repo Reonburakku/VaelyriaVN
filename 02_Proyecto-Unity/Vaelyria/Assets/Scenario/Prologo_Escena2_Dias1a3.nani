@@ -40,6 +40,11 @@
     Otra mañana productiva.
     @back "Historia - Medio dia.LineReveal" time:2
 @endif
+@if destinos_visitados==3
+    @back "Arte - Manana.LineReveal" time:2
+    Otra mañana productiva.
+    @back "Arte - Medio dia.LineReveal" time:2
+@endif
 
 ; Día 1 (quedan los 3) o Día 2 (quedan 2) — se ofrecen los destinos todavía no visitados.
 Durante el almuerzo, puedo aprovechar para obtener información.
@@ -48,9 +53,6 @@ En donde puedo preguntar hoy?
 
 ; Los tres ya visitados -> Día 4, sin más elecciones.
 @if destinos_visitados==3
-    @back "Arte - Manana.LineReveal" time:2
-    Otra mañana productiva.
-    @back "Arte - Medio dia.LineReveal" time:2
     @addChoice "Quedarme en el aula" goto:#Dia4
 @endif
 
