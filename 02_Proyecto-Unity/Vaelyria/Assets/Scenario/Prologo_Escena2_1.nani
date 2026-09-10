@@ -1,0 +1,44 @@
+; ============================================================
+; PRÓLOGO — ESCENA 2.1: Biblioteca central, tarde
+; Fuente: 00_Documentacion/Guion/Prologo.md (Borrador 9), líneas 72-86.
+; ============================================================
+
+; Fondo: "Biblioteca central — estanterías", variante Escena 2.1 (Lista-Fondos.md línea 48:
+; "afternoon light, bright natural lighting" = la variante clara/de día, no la de último rayo de
+; sol de la Escena 3). En disco corresponde a "Biblioteca - Medio dia", pese a que el guion llama
+; a esta escena "tarde" — el prompt de generación es el que decide, no el nombre de la sección.
+@back "Biblioteca - Medio dia.LineReveal" time:1.5
+
+; Lista-Audio.md no asigna un BGM propio a esta escena puntual — por pedido del usuario, cuando
+; ninguna escena tiene tema específico se usa "Tema de campus" (Glass Garden Morning) como default.
+@stopBgm
+@bgm "Musica/Glass Garden Morning"
+
+Estoy frente al mostrador de referencia.
+
+; Nota de arte/dirección (guion L.76): sprite de la Bibliotecaria = "Idle" (expresión base). Se
+; mantiene en "Idle" durante toda la escena — decisión confirmada de que este personaje solo tiene
+; esa apariencia, no se genera "Lástima" (ver nota más abajo, guion L.86). Bibliotecaria.png es la
+; única apariencia del personaje, por eso @char Bibliotecaria alcanza sin especificar apariencia.
+@char Bibliotecaria scale:0.6 pos:60,0
+
+La bibliotecaria, una mujer mayor con lentes colgando de una cadena, escucha mi pregunta con paciencia y termina negando con la cabeza.
+
+Bibliotecaria: Busqué en el catálogo general y en los índices de historia regional.
+Bibliotecaria: No encuentro nada relacionado con Vaelyria, ni como tema principal ni como referencia.
+Bibliotecaria: Si quieres, te dejo anotado el pedido y lo reviso con más calma esta semana.
+
+Protagonista: Se lo agradezco. Voy a seguir buscando por mi cuenta también.
+
+Me mira un segundo de más, con esa mezcla de simpatía y lástima que se les da a los estudiantes obsesionados con algo que probablemente no lleve a ningún lado.
+
+; Nota de arte/dirección (guion L.86): sprite de la Bibliotecaria = "Lástima" en este momento.
+; Decisión confirmada: no se genera esa apariencia, se omite el cambio de sprite (el tono queda
+; solo en la narración de arriba, "esa mezcla de simpatía y lástima..."). Se la oculta acá porque
+; termina la escena (convención: los sprites desaparecen al cortar a la siguiente).
+@hide Bibliotecaria
+
+; ============================================================
+; Fin Escena 2.1 — continúa en "Días 1 a 3" (elección de destino: Restaurante/Jardín/Entrada).
+; ============================================================
+@goto Prologo_Escena2_Dias1a3

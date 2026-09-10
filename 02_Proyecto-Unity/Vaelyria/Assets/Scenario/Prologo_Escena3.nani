@@ -1,0 +1,219 @@
+; ============================================================
+; PRÓLOGO — ESCENA 3: La advertencia de Egis
+; Fuente: 00_Documentacion/Guion/Prologo.md (Borrador 9), líneas 221-365.
+; ============================================================
+
+; Fondo: "Biblioteca central — estanterías", variante Escena 3 (última hora de la tarde, luz baja
+; — evening light, low warm lighting, dim lamps, en Lista-Fondos.md) = "Biblioteca - Atardecer",
+; a diferencia de "Biblioteca - Medio dia" que usa la Escena 2.1.
+@back "Biblioteca - Atardecer.LineReveal" time:1.5
+
+; "Tema de tensión suave" (introspectivo) asignado a esta escena en Lista-Audio.md.
+@stopBgm
+@bgm "Musica/memories_of_winter"
+
+; SFX pendiente (Lista-Audio.md): "Ambiente de biblioteca" — muy silencioso, eco sutil, loop.
+; SFX pendiente: "Sonido de escribir en libreta" ya se reutilizó en Escenas 1 y 2.3; acá no aplica.
+
+Estoy solo entre las estanterías de la sección de historia regional, en la biblioteca central.
+Ya está casi vacía a esta hora de la tarde.
+Reviso el lomo de libros que ya revisé antes, más por costumbre que por esperanza.
+Oigo pasos que se acercan. Suaves, controlados.
+
+; SFX pendiente (Lista-Audio.md): "Pasos controlados (Egis acercándose)".
+
+; Name binding (documentado en CLAUDE.md): Display Name de Egis atado a {NombreEgis}. Se oculta
+; con "???" desde su entrada — ni la narración ni el protagonista la nombran todavía — hasta que
+; ella misma se presenta en la Opción A, más abajo (la Opción B no incluye ese momento; si el
+; jugador la elige, su nombre queda sin revelar por el resto del prólogo, tal como está en el guion).
+@set NombreEgis="???"
+
+Veo venir al final del pasillo a una chica.
+Recordaría haberla visto anteriormente, su largo cabello blanco y su traje elegante no pasarían desapercibidos.
+Se queda a una distancia prudente.
+Lo suficientemente cerca para hablar sin subir la voz
+Y lo suficientemente lejos para que no exista posibilidad de contacto
+Parece que sabe medir el espacio perfectamente.
+
+; Nota de arte/dirección (guion L.225): sprite de Egis = "Seria" desde su entrada hasta el cambio
+; a "Tensa" más abajo. Es su apariencia de identidad base (Lista-Expresiones-Sprites.md, nota de
+; eficiencia), pero el archivo real se llama "Egis-seria.png" — no hay "Egis.png" genérico, así
+; que hace falta especificar la apariencia explícitamente (el fallback por defecto elegiría
+; cualquier otro archivo del personaje al azar).
+@char Egis.Egis-seria scale:1 pos:60,-60
+
+Egis: Eres el que anda preguntando por una ciudad que nadie conoce, ¿cierto?
+
+Protagonista: Sí soy. Aunque ya perdí la cuenta de a cuántas personas les pregunté.
+
+Egis: A bastantes. Se corrió la voz.
+
+...
+
+Se acerca un poco más, pero mantiene su postura firme y distante, se queda de pie, con los brazos cruzados de forma casi protectora.
+
+Egis: No vine a burlarme, si es lo que estás pensando.
+Egis: Vine a decirte algo que probablemente nadie más te va a decir con esta claridad:
+Egis: Detente.
+
+Protagonista: ¿Disculpa?
+
+Egis: Deja de preguntar.
+Egis: No creo que esté mal tener curiosidad.
+Egis: De hecho, creo que es mejor que solo intentar aprobar las materias, como hacen la mayoría.
+Egis: Pero seguir insistiendo en algo que nadie reconoce.
+Egis: En voz alta.
+Egis: Frente a cada vez más gente.
+Egis: ...
+Egis: No te va a dar la respuesta que buscas. 
+Egis: Y puedes tener consecuencias.
+
+; Nota técnica (guion L.249): elección de sabor — ambas opciones convergen en el mismo punto de la
+; escena, no genera ninguna variable ni afecta ninguna ruta. Uso @choice (no @addChoice) porque no
+; necesita condición y ya detiene la reproducción automáticamente.
+@choice "¿Consecuencias?"
+    ; Nota de arte/dirección (guion L.258): sprite de Egis = "Tensa" en este momento.
+    @char Egis.Egis-tensa
+    No responde de inmediato. 
+    Por un segundo algo se tensa en su postura, como si subiera la guardia.
+
+    Egis: Aprendí.
+    Egis: Hace tiempo.
+    Egis: Que hay preguntas que es mejor no hacer en voz alta.
+    Egis: No todos tienen tanto interés.
+@choice "¿Como un apodo?"
+
+    ; Nota de arte/dirección (guion L.271): sprite de Egis = "Triste" en este momento.
+    @char Egis.Egis-triste-2
+    ; Acotación de tono (guion L.266, "susurrando"): Egis tiene sprite propio (cambia a "Triste"
+    ; en la misma línea), así que el tono queda resuelto por la apariencia, no con cursiva.
+    Egis: Ojalá solo fuera un apodo.
+
+; Sigue igual sea cual sea la opción elegida (guion L.273).
+Protagonista: ¿Me dejarías de hablar si pasa eso?
+
+@char Egis.Egis-sorprendida
+Egis: ¿Eh?
+
+Protagonista: Bueno, no quisiera que esta fuera la última charla.
+
+; Nota de arte/dirección (guion L.288): sprite de Egis = "Sonrisa tímida" en este momento.
+; Pendiente de producción de arte: no está generado todavía (solo Seria/Tensa/Triste/Mirada hacia
+; atrás existen en Characters/Egis/) — se referencia igual el nombre final de la apariencia
+; ("Egis-sonrisa-timida", siguiendo la misma convención sin acentos y en minúscula que
+; "Egis-mirada-hacia-atras").
+@char Egis.Egis-sonrisa-timida
+
+; Acotación de tono (guion L.283, "algo parecido a media sonrisa, la primera grieta en su tono"):
+; resuelta con el cambio de sprite de abajo, no con cursiva (mismo criterio que arriba).
+Egis: Preferiría no ser la Vael-chica.
+
+Protagonista: Tú también...
+
+@char Egis.Egis-seria
+Me mira un momento más, evaluándome, con la curiosidad de alguien que reconoce algo familiar y no está segura de qué hacer con eso.
+
+Egis: Recién llegaste. 
+Egis: No conoces a nadie todavía.
+Egis: y ya estás construyendo fama de raro antes de terminar el primer mes.
+Egis: Puedes seguir así si quieres.
+Egis: Pero si te importa hacer amigos acá,
+Egis: Si te importa que la gente te trate como alguien normal,
+Egis: Es mejor no llamar tanto la atención.
+
+...
+La miro, y noto algo más allá de mis propias ganas de seguir investigando:
+Ella no está actuando por fastidio.
+Ni por seguir una norma social cualquiera.
+Hay algo genuino ahí, algo que no termino de entender.
+No me está mintiendo.
+Pero tampoco me está contando todo.
+
+; ============================================================
+; [PUNTO DE ELECCIÓN — Nota técnica, tarea 21] "Punto de quiebre" (plan de trabajo, tarea 4).
+; ============================================================
+; Primera partida: solo Opción A disponible (g_ruta_egis_completada todavía no existe o es false,
+; @addChoice con @if la oculta por completo, no solo la deshabilita). Desde la 2ª partida en
+; adelante (g_ruta_egis_completada==true, ver inicialización y nota en Escena 1/2.3): también se
+; habilita la Opción B. Uso @addChoice (no @choice) porque necesita condición — @choice no soporta
+; "if:" (ver doc de RequireChoice).
+@addChoice "A. Seguir el consejo de Egis." goto:#OpcionA
+@if g_ruta_egis_completada
+    @addChoice "B. Volver a preguntarle a Hazel" goto:#OpcionB
+@endif
+@stop
+
+; ============================================================
+# OpcionA
+; ============================================================
+; Opción A — Hacerle caso a Egis (guion L.310-343). Cierre del prólogo en primera partida y
+; siguientes.
+
+Protagonista: Está bien. Voy a dejarlo por un tiempo. Al menos en público.
+
+Algo en su postura se afloja. Como si se quitara una carga que no le correspondía.
+
+Egis: Es lo más sensato que vas a hacer esta semana.
+
+Protagonista: No prometo que se me vaya a pasar la curiosidad.
+
+Egis: No te pedí eso.
+Egis: Te pedí que no lo grites por los pasillos.
+
+Se da media vuelta para irse.
+
+@hide Egis
+
+Protagonista: ¿Cómo te llamas?
+
+; Nota de arte/dirección (guion L.334): sprite de Egis = "Mirada hacia atrás" en este momento.
+@char Egis.Egis-mirada-hacia-atras
+
+Egis: Egis.
+
+; Se presentó por su nombre — a partir de acá su Display Name deja de mostrar "???" (mismo
+; criterio que con Marr en Escena 1).
+@set NombreEgis="Egis"
+
+; Acotación de tono (guion L.337, "hablando para sí mismo"): el protagonista no tiene sprite
+; propio, mismo tratamiento en cursiva que en las escenas anteriores.
+Protagonista: <i>Vaelyria puede esperar. Por ahora.</i>
+
+@hide Egis
+; La Bibliotecaria grita desde algún otro punto de la biblioteca — no se muestra su sprite (no
+; está en esta sección con Egis y el protagonista). Nota de Lista-Audio.md: queda sin definir si
+; esto además lleva un SFX de "¡Shhh!" o se resuelve solo con voz (tarea 14) — se deja el texto
+; tal como está en el guion mientras tanto.
+Bibliotecaria: ¡Shhh!
+
+; ============================================================
+; Fin del prólogo — Opción A. Continúa en Bloque A: Ruta Egis (Fase 2, tarea 19).
+; No se desarrolla más contenido de ruta acá.
+; ============================================================
+@stop
+
+; ============================================================
+# OpcionB
+; ============================================================
+; Opción B — Preguntarle a Hazel en su lugar (guion L.349-363). Desbloqueada desde la 2ª partida.
+; Egis nunca dice su nombre en esta rama (así está en el guion) — NombreEgis se queda en "???"
+; por el resto del prólogo.
+
+Protagonista: Aprecio el consejo. Pero no puedo simplemente soltarlo.
+
+Egis no se sorprende.
+Casi parece que lo esperaba.
+
+Egis: Me imaginaba que ibas a decir algo así. Bueno. Es tu decisión.
+
+Se va sin más reproche, con la misma calma con la que llegó.
+Me quedo solo un momento entre las estanterías, y entonces recuerdo algo: la reacción de Hazel, cuando le pregunté lo mismo. Algo no me cuadra.
+
+Hazel dijo que no sabía nada. Pero no parecía alguien que no sabe nada.
+
+@hide Egis
+
+; ============================================================
+; Fin del prólogo — Opción B. Continúa en Bloque B: Ruta compartida Hazel/Vaelyr (Fase 2, tarea 19).
+; No se desarrolla más contenido de ruta acá.
+; ============================================================

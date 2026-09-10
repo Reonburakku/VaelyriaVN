@@ -3,7 +3,18 @@
 ; Fuente: 00_Documentacion/Guion/Prologo.md (Borrador 9), líneas 13-66.
 ; ============================================================
 
+; Variable global persistente entre partidas (documento de diseño, sección 2 — "no se resetea al
+; empezar una partida nueva"). Se inicializa acá, en el primerísimo punto del juego, con asignación
+; condicional (?=) para no pisar el valor si ya viene de una partida anterior. El prefijo "g_" es
+; el que exige Naninovel para que persista entre partidas nuevas — "ruta_egis_completada" a secas
+; (como aparece en CLAUDE.md y el documento de diseño) es el nombre conceptual, no el literal.
+@set g_ruta_egis_completada?=false
+
 @back "Historia - Manana"
+
+; Corta cualquier BGM que pudiera venir sonando antes de arrancar el propio, para que no se
+; superpongan (@bgm no detiene otras pistas por su cuenta — Naninovel permite varias a la vez).
+@stopBgm
 @bgm "Musica/Glass Garden Morning"
 
 ; SFX pendiente de producción (ver 01_Assets/Audio/Lista-Audio.md): "Murmullo de aula llena" (ambiente, loop).
@@ -20,9 +31,10 @@ A eso vine, deduje que esta es la ubicación, aunque ahora tiene otro nombre, es
 
 ; SFX pendiente: "Sonido de escribir en libreta" (reutilizable también en Escena 2.3).
 
-; Nota de arte/dirección (guion L.21): sprite de Marr = "Idle" (apariencia base) desde su entrada
-; hasta el cambio a "Pensativa" más abajo. Marr.png es la única apariencia generada por ahora
-; (equivale a "Idle"), por eso @char Marr alcanza sin especificar apariencia.
+; Nota de arte/dirección (guion L.21): sprite de Marr = "Idle" (apariencia base). Se mantiene en
+; "Idle" durante toda la escena — decisión confirmada de que Marr solo tiene esa apariencia, no se
+; genera "Pensativa" (ver nota más abajo, guion L.36). Marr.png es la única apariencia del
+; personaje, por eso @char Marr alcanza sin especificar apariencia.
 ; Name binding: su Display Name está atado a la variable NombreMarr (ver CharactersConfiguration.asset)
 ; para que muestre "???" hasta que se presente por su nombre, más abajo.
 @set NombreMarr="???"
@@ -45,14 +57,15 @@ Marr: Si aún no lo saben, les recomiendo empezar a pensarlo, los secretos no se
 
 Empieza la ronda de presentaciones.
 Menciones dispersas de Mesopotamia, la Ruta de la Seda, arqueología subacuática del Mediterráneo.
-Temas muy interesantes. Me llega el turno.
+Temas muy interesantes. Llega mi turno.
 
 ; Nota técnica (guion L.28): primer uso de la variable {Nombre} en todo el guion — se pide acá,
 ; justo antes de la línea de presentación, con "Leo" precargado como valor por defecto
 ; (ver 00_Documentacion/Guion/Fichas-Personajes/Protagonista.md).
 @input Nombre summary:"¿Cómo te llamas?" value:"Leo"
 
-Protagonista: Me llamo {Nombre}. Vine específicamente para investigar sobre Vaelyria.
+Protagonista: Me llamo {Nombre}.
+Protagonista: Vine específicamente para investigar sobre Vaelyria.
 
 .........
 
@@ -60,24 +73,23 @@ La profesora hace un silencio breve.
 No el silencio de quien reconoce el nombre y lo sopesa, sino el de quien lo escucha por primera vez y no sabe bien qué hacer con él.
 Frunce el ceño, genuinamente pensativa, no hostil.
 
-; Nota de arte/dirección (guion L.36): sprite de Marr = "Pensativa" en este momento.
-; Pendiente de producción de arte: el archivo de esta apariencia todavía no está generado
-; (solo existe Marr.png/Idle en Characters/Marr/) — se referencia igual el nombre final de la
-; apariencia; Naninovel no falla si el archivo no existe todavía, y el arte se suma después sin
-; tener que volver a tocar este script (ver checklist de consistencia al final de Prologo.md).
+; Nota de arte/dirección (guion L.36): sprite de Marr = "Pensativa" en este momento. Decisión
+; confirmada: Marr solo tiene la apariencia "Idle" (Lista-Expresiones-Sprites.md) — no se genera
+; "Pensativa", así que se omite el cambio de sprite acá; el tono queda solo en la narración de
+; arriba ("Frunce el ceño, genuinamente pensativa, no hostil.") y en el texto de sus líneas.
 
-Marr: ¿Vaelyria... como asentamiento? 
+Marr: ¿Vaelyria... como asentamiento?
 Marr: No me suena el nombre. 
 Marr: ¿Es una variante regional de algo, o...?
 
 Protagonista: Aparece mencionada en varias fuentes como una ciudad importante, próspera, con un crecimiento inusualmente rápido para su época.
-Nunca encontré un texto que la describiera directamente, solo referencias de paso, como cualquier ciudad que simplemente existe.
+Protagonista: Nunca encontré un texto que la describiera directamente, solo referencias de paso, como cualquier ciudad que simplemente existe.
 
 ; SFX pendiente: "Risas contenidas de grupo" (al mencionar Vaelyria).
 @hide Marr
 EstudiantesFondo: ¿Vaelyria?
 EstudiantesFondo: ¿Te suena ese nombre?
-EstudiantesFondo: Para nada
+EstudiantesFondo: Para nada.
 
 @show Marr
 Marr: No conozco ese nombre.
@@ -102,5 +114,6 @@ Protagonista: <i>Alguien debería saber.</i>
 ; (tono de la línea de Marr de arriba, animación/actuación si se agrega en el futuro).
 
 ; ============================================================
-; Fin Escena 1 — continúa en Escena 2 (Biblioteca central), todavía no implementada.
+; Fin Escena 1 — continúa en Escena 2.1 (Biblioteca central).
 ; ============================================================
+@goto Prologo_Escena2_1

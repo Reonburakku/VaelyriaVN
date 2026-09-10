@@ -1,0 +1,179 @@
+; ============================================================
+; PRÓLOGO — ESCENA 2, "Días 1 a 3": Preguntando por el campus, horario de almuerzo
+; Fuente: 00_Documentacion/Guion/Prologo.md (Borrador 9), líneas 88-141.
+; ============================================================
+
+; Nota técnica (guion L.90): bucle de 3 días. Cada día se ofrece una elección entre los destinos
+; que todavía no se visitaron — el Día 1 ofrece los 3, el Día 2 ofrece los 2 restantes, y el Día 3
+; avanza directo al único que queda, sin mostrar una elección real ese día. El contenido de cada
+; destino no cambia según el día en que se visite — solo el orden. Los tres terminan
+; visitándose siempre, sin excepción.
+
+
+; "Tema de campus" cubre Escena 1 y Escena 2 (Días 1-3) según Lista-Audio.md — se retoma acá por
+; si este script se juega de forma aislada (no depende de que Escena 1 lo haya dejado sonando).
+; @stopBgm corta cualquier pista previa para que no se superponga con esta (@bgm no lo hace solo).
+@stopBgm
+@bgm "Musica/Glass Garden Morning"
+
+; Variables de control del bucle (primer uso en todo el guion).
+@set visito_restaurante=false
+@set visito_jardin=false
+@set visito_entrada=false
+@set destinos_visitados=0
+
+; ============================================================
+# MenuAlmuerzo
+; ============================================================
+@if destinos_visitados==0
+    @back "Historia - Manana.LineReveal" time:1.5
+    Otra mañana productiva.
+    @back "Historia - Medio dia.LineReveal" time:1.5
+@endif
+@if destinos_visitados==1
+    @back "Arte - Manana.LineReveal" time:1.5
+    Otra mañana productiva.
+    @back "Arte - Medio dia.LineReveal" time:1.5
+@endif
+@if destinos_visitados==2
+    @back "Historia - Manana.LineReveal" time:1.5
+    Otra mañana productiva.
+    @back "Historia - Medio dia.LineReveal" time:1.5
+@endif
+
+; Día 1 (quedan los 3) o Día 2 (quedan 2) — se ofrecen los destinos todavía no visitados.
+Durante el almuerzo, puedo aprovechar para obtener información.
+
+En donde puedo preguntar hoy?
+
+; Los tres ya visitados -> Día 4, sin más elecciones.
+@if destinos_visitados==3
+    @back "Arte - Manana.LineReveal" time:1.5
+    Otra mañana productiva.
+    @back "Arte - Medio dia.LineReveal" time:1.5
+    @addChoice "Quedarme en el aula" goto:#Dia4
+@endif
+
+
+
+
+@if visito_restaurante==false
+    @addChoice "Ir al restaurante" goto:#DestinoRestaurante
+@endif
+@if visito_jardin==false
+    @addChoice "Ir al jardín" goto:#DestinoJardin
+@endif
+@if visito_entrada==false
+    @addChoice "Ir a la entrada de la universidad" goto:#DestinoEntrada
+@endif
+@stop
+
+; ============================================================
+# DestinoRestaurante
+; ============================================================
+@set visito_restaurante=true
+@set destinos_visitados++
+@back "Comedor - Medio dia.LineReveal" time:1.5
+
+; SFX pendiente (Lista-Audio.md): "Ambiente de comedor universitario" — platos, murmullo, bullicio, loop.
+
+Me acerco a una mesa donde reconozco un par de caras de mi clase de arqueología.
+Apenas menciono "Vaelyria", uno de ellos suelta una risa corta, nada amable.
+
+; Nota de guion (L.141): Estudiante del Restaurante es anónimo, sin género especificado — sprite
+; elegido al azar entre los dos Extras Genéricos (Personajes-Secundarios.md). @random + @group
+; duplica el diálogo en cada rama porque el tag de autor de Naninovel no puede ser una variable.
+@random
+    @group
+        @char ExtraGenericoFemenino scale:1 pos:60,-60
+        ExtraGenericoFemenino: Ah, eres tú. El de la ciudad que no existe.
+        Protagonista: ¿Entonces la conoces?
+        ExtraGenericoFemenino: No, no puedo conocer algo que no existe.
+        @hide ExtraGenericoFemenino
+    @group
+        @char ExtraGenericoMasculino scale:1 pos:60,-60
+        ExtraGenericoMasculino: Ah, eres tú. El de la ciudad que no existe.
+        Protagonista: ¿Entonces la conoces?
+        ExtraGenericoMasculino: No, no puedo conocer algo que no existe.
+        @hide ExtraGenericoMasculino
+
+Nadie en la mesa tiene nada más que ofrecer.
+Pregunto a unos cuantos estudiantes, antes de comer.
+
+@goto #MenuAlmuerzo
+
+; ============================================================
+# DestinoJardin
+; ============================================================
+@set visito_jardin=true
+@set destinos_visitados++
+@back "Jardin - Medio dia.LineReveal" time:1.5
+
+; SFX pendiente (Lista-Audio.md): "Ambiente exterior de jardín" — viento suave, pájaros, loop.
+
+El jardín interior de la facultad está tranquilo a esta hora.
+Veo un par de estudiantes leyendo bajo la sombra de un árbol.
+Me acerco suavemente, tratando de sonar casual.
+
+; Mismo criterio que en el Restaurante: Estudiante del Jardín anónimo, sprite al azar.
+@random
+    @group
+        @char ExtraGenericoFemenino scale:1 pos:60,-60
+        ExtraGenericoFemenino: ¿Vaelyria? Ni idea. ¿Es de una serie o algo?
+        Protagonista: No, es... da igual. Gracias de todas formas.
+        @hide ExtraGenericoFemenino
+    @group
+        @char ExtraGenericoMasculino scale:1 pos:60,-60
+        ExtraGenericoMasculino: ¿Vaelyria? Ni idea. ¿Es de una serie o algo?
+        Protagonista: No, es... da igual. Gracias de todas formas.
+        @hide ExtraGenericoMasculino
+
+Vuelvo sobre mis pasos antes de que me pregunten por qué me interesa tanto algo que, para ellos, ni siquiera existe.
+
+@goto #MenuAlmuerzo
+
+; ============================================================
+# DestinoEntrada
+; ============================================================
+@set visito_entrada=true
+@set destinos_visitados++
+@back "Universidad.LineReveal" time:1.5
+
+; SFX pendiente (Lista-Audio.md): "Ambiente exterior de entrada" — viento, sonido urbano lejano, loop.
+
+Pruebo en la entrada, con el personal de seguridad y algunos estudiantes que van llegando tarde.
+Uno de los guardias, más por cortesía que por interés real, me escucha hasta el final.
+
+; Nota de arte/dirección (guion L.136): sprite de guardia genérico = "Lástima" directamente (sin
+; fase "Idle" previa, a diferencia de Marr/Bibliotecaria). Mismo criterio de azar que los otros
+; dos destinos. Nota de producción: Lista-Expresiones-Sprites.md solo tiene "Lástima" prompteado
+; para Extra Genérico Masculino por ahora (Borrador 9 asumía guardia masculino) — si el azar cae
+; en Femenino, falta ese prompt todavía; avisar para generarlo si hace falta antes de este destino.
+@random
+    @group
+        @char ExtraGenericoFemenino.Lástima scale:1 pos:60,-60
+        ExtraGenericoFemenino: Llevo doce años acá y nunca escuché ese nombre. Lo siento.
+        @hide ExtraGenericoFemenino
+    @group
+        @char ExtraGenericoMasculino.Lástima scale:1 pos:60,-60
+        ExtraGenericoMasculino: Llevo doce años acá y nunca escuché ese nombre. Lo siento.
+        @hide ExtraGenericoMasculino
+
+; Acotación de tono (guion L.138, "(pensamiento)"): mismo tratamiento en cursiva que usamos con
+; el protagonista en la Escena 1.
+Protagonista: <i>Bueno, no podía esperar más.</i>
+
+@goto #MenuAlmuerzo
+
+; ============================================================
+# Dia4
+; ============================================================
+; Nota técnica (guion L.145-147): única opción disponible ("Quedarme en el aula") — mismo
+; criterio que el Día 3, no se muestra una elección real de un solo botón. La propia Escena 2.3
+; ya abre narrando que se queda en el aula, así que no se agrega texto acá para no
+; duplicar/inventar contenido — este label solo existe como punto de corte.
+
+; ============================================================
+; Fin "Días 1 a 3" — corta a Escena 2.3 (Aula vacía, hora de almuerzo).
+; ============================================================
+@goto Prologo_Escena2_3

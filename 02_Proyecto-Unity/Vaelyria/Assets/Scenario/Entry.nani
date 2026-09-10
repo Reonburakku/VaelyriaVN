@@ -8,6 +8,19 @@ New game started.
 
 
 
+; ============================================================
+; Arranque directo en Escena 3 para pruebas — variables que normalmente ya estarían seteadas por
+; las escenas anteriores (Escena 1: @input Nombre; Escena 1: inicialización defensiva de
+; g_ruta_egis_completada) y que Escena 3 necesita:
+; - Nombre: usado por el Display Name de Protagonista ({Nombre}, ver CharactersConfiguration.asset)
+;   en cada línea "Protagonista: ...". Sin esto, esa expresión fallaría al evaluarse.
+; - g_ruta_egis_completada: leída en el punto de quiebre para decidir si se muestra la Opción B
+;   ("Volver a preguntarle a Hazel"). En false simula una primera partida (solo Opción A visible);
+;   cambiar a true acá mismo para probar la Opción B.
+; NombreEgis no hace falta inicializarla acá — Escena 3 ya la setea a "???" en su propio arranque.
+;@set Nombre="Leo"
+;@set g_ruta_egis_completada=false
+
 ; Hide everything and exit to the title menu.
 @hideAll wait!
 @goto Prologo_Escena1

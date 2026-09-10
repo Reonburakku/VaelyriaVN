@@ -17,9 +17,7 @@
 | Agnes             | Sonrisa confiada    |
 | Agnes             | Riendo              |
 | Prof. Isolde Marr | Idle                |
-| Prof. Isolde Marr | Pensativa           |
 | Bibliotecaria     | Idle                |
-| Bibliotecaria     | Lástima            |
 | Egis              | Seria               |
 | Egis              | Tensa               |
 | Egis              | Triste              |
@@ -97,7 +95,7 @@ masterpiece, best quality, 1girl, solo, white hair, silver hair, straight hair, 
 masterpiece, best quality, 1woman, solo, dark brown hair, greying hair, hair bun, thin frame glasses, brown corduroy blazer, simple shirt underneath, dress pants, middle aged woman, calm neutral expression, standing, simple pose, white background, full body, official art, single view
 ```
 
-- **Pensativa** → agregar: `pensive expression, slight frown, thoughtful`
+Solo se genera "Idle" — decisión confirmada de no producir "Pensativa" para este personaje.
 
 ### Bibliotecaria
 
@@ -107,7 +105,7 @@ masterpiece, best quality, 1woman, solo, dark brown hair, greying hair, hair bun
 masterpiece, best quality, 1woman, solo, elderly woman, grey hair, short hair, reading glasses on chain, cardigan, neutral colors, small frame, gentle neutral expression, standing, simple pose, white background, full body, official art, single view
 ```
 
-- **Lástima** → agregar: `pitying expression, sympathetic look, soft frown`
+Solo se genera "Idle" — decisión confirmada de no producir "Lástima" para este personaje.
 
 ### Extras genéricos
 

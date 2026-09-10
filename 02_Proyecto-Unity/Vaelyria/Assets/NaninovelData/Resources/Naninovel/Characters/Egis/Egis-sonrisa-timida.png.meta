@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: b7fe596bd1c190548b754bcf42102536
+guid: 523cced224864d54082646b65a7e8071
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8113061652252888627
-    second: Historia - Manana_0
+      213: 2261838364736196318
+    second: Egis-sonrisa-timida_0
+  - first:
+      213: 3933628160134283447
+    second: Egis-sonrisa-timida_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Historia - Manana_0
+      name: Egis-sonrisa-timida_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1516
-        height: 1037
+        width: 934
+        height: 1584
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +131,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 33e806f7692679070800000000000000
-      internalID: 8113061652252888627
+      spriteID: ede837d420aa36f10800000000000000
+      internalID: 2261838364736196318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Egis-sonrisa-timida_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 609
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b0074b68fd079630800000000000000
+      internalID: 3933628160134283447
       vertices: []
       indices: 
       edges: []
@@ -148,7 +173,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Historia - Manana_0: 8113061652252888627
+      Egis-sonrisa-timida_0: 2261838364736196318
+      Egis-sonrisa-timida_1: 3933628160134283447
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

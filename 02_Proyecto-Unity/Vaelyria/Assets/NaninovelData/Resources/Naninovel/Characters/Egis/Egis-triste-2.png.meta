@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b7fe596bd1c190548b754bcf42102536
+guid: 25953791d6c1d994c975a00ab2cf391b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8113061652252888627
-    second: Historia - Manana_0
+      213: -6122911589790376331
+    second: Egis-triste-2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Historia - Manana_0
+      name: Egis-triste-2_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1516
-        height: 1037
+        width: 934
+        height: 1584
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 33e806f7692679070800000000000000
-      internalID: 8113061652252888627
+      spriteID: 57e1c63895c070ba0800000000000000
+      internalID: -6122911589790376331
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Historia - Manana_0: 8113061652252888627
+      Egis-triste-2_0: -6122911589790376331
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

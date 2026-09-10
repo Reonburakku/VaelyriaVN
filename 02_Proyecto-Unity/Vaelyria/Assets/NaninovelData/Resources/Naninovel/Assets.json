@@ -31,6 +31,36 @@
             "group": ""
         },
         {
+            "guid": "268be07a9e1a4a5dbd477843f76184a8",
+            "prefix": "Scripts",
+            "path": "Prologo_Escena2_1",
+            "group": ""
+        },
+        {
+            "guid": "a61dc4349a8349ab8b7af45036fd1c7d",
+            "prefix": "Scripts",
+            "path": "Prologo_Escena2_3",
+            "group": ""
+        },
+        {
+            "guid": "18e6c937146c44dda8ad463f1acc05ba",
+            "prefix": "Scripts",
+            "path": "Prologo_Escena2_4",
+            "group": ""
+        },
+        {
+            "guid": "9c85aa9dec8e416aa4f3229ab5036c81",
+            "prefix": "Scripts",
+            "path": "Prologo_Escena2_Dias1a3",
+            "group": ""
+        },
+        {
+            "guid": "f0b0977116e7465185bd11f816a98e00",
+            "prefix": "Scripts",
+            "path": "Prologo_Escena3",
+            "group": ""
+        },
+        {
             "guid": "7a84b296c04a24341a526f1b612b17a2",
             "prefix": "Scripts",
             "path": "Title",

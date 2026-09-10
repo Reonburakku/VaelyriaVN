@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b7fe596bd1c190548b754bcf42102536
+guid: a3a80e292b6161f469e443e66d17e4cd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8113061652252888627
-    second: Historia - Manana_0
+      213: -8603434915775747638
+    second: Universidad - Tarde_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,12 +113,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Historia - Manana_0
+      name: Universidad - Tarde_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1516
+        width: 1517
         height: 1037
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 33e806f7692679070800000000000000
-      internalID: 8113061652252888627
+      spriteID: ac96efce6857a9880800000000000000
+      internalID: -8603434915775747638
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Historia - Manana_0: 8113061652252888627
+      Universidad - Tarde_0: -8603434915775747638
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

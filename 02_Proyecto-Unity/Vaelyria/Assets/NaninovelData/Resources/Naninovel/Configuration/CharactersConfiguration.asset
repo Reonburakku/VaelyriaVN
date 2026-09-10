@@ -75,6 +75,8 @@ MonoBehaviour:
     - Marr
     - Egis
     - Hazel
+    - GrupoEstudiantes
+    - GrupoPersonas
     metas:
     - Implementation: Naninovel.NarratorCharacter, Elringus.Naninovel.Runtime, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
@@ -391,6 +393,96 @@ MonoBehaviour:
       LinkedPrinter:
       Poses: []
       Anchors: []
+    - Implementation: Naninovel.NarratorCharacter, Elringus.Naninovel.Runtime, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      Loader:
+        PathPrefix: Characters
+        ProviderTypes:
+        - Naninovel.AddressableResourceProvider, Elringus.Naninovel.Runtime, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        - Naninovel.ProjectResourceProvider, Elringus.Naninovel.Runtime, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      guid: a21496f9-7bbb-4af3-aedc-931cd731334c
+      customData:
+        rid: -18
+      Pivot: {x: 0.5, y: 0}
+      PixelsPerUnit: 100
+      FilterMode: 2
+      EnableDepthPass: 1
+      DepthAlphaCutoff: 0.5
+      CustomTextureMaterial: {fileID: 0}
+      CustomSpriteMaterial: {fileID: 0}
+      RenderTexture: {fileID: 0}
+      RenderRectangle:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1
+        height: 1
+      BakedLookDirection: 1
+      HasName: 1
+      DisplayName: Grupo de estudiantes
+      UseCharacterColor: 0
+      NameColor: {r: 1, g: 1, b: 1, a: 1}
+      MessageColor: {r: 1, g: 1, b: 1, a: 1}
+      HighlightWhenSpeaking: 0
+      HighlightCharacterCount: 0
+      SpeakingPose:
+      NotSpeakingPose:
+      PlaceOnTop: 1
+      HighlightDuration: 0.35
+      HighlightEasing: 1
+      MessageSound:
+      MessageSoundPlayback: 0
+      VoiceSource: {fileID: 0}
+      LinkedPrinter:
+      Poses: []
+      Anchors: []
+    - Implementation: Naninovel.NarratorCharacter, Elringus.Naninovel.Runtime, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      Loader:
+        PathPrefix: Characters
+        ProviderTypes:
+        - Naninovel.AddressableResourceProvider, Elringus.Naninovel.Runtime, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        - Naninovel.ProjectResourceProvider, Elringus.Naninovel.Runtime, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      guid: 5690e4fd-2d03-4148-9e5f-253edcaafd5e
+      customData:
+        rid: -20
+      Pivot: {x: 0.5, y: 0}
+      PixelsPerUnit: 100
+      FilterMode: 2
+      EnableDepthPass: 1
+      DepthAlphaCutoff: 0.5
+      CustomTextureMaterial: {fileID: 0}
+      CustomSpriteMaterial: {fileID: 0}
+      RenderTexture: {fileID: 0}
+      RenderRectangle:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1
+        height: 1
+      BakedLookDirection: 1
+      HasName: 1
+      DisplayName: Grupo de personas
+      UseCharacterColor: 0
+      NameColor: {r: 1, g: 1, b: 1, a: 1}
+      MessageColor: {r: 1, g: 1, b: 1, a: 1}
+      HighlightWhenSpeaking: 0
+      HighlightCharacterCount: 0
+      SpeakingPose:
+      NotSpeakingPose:
+      PlaceOnTop: 1
+      HighlightDuration: 0.35
+      HighlightEasing: 1
+      MessageSound:
+      MessageSoundPlayback: 0
+      VoiceSource: {fileID: 0}
+      LinkedPrinter:
+      Poses: []
+      Anchors: []
   AvatarLoader:
     PathPrefix: CharacterAvatars
     ProviderTypes:
@@ -417,4 +509,8 @@ MonoBehaviour:
     - rid: -14
       type: {class: , ns: , asm: }
     - rid: -16
+      type: {class: , ns: , asm: }
+    - rid: -18
+      type: {class: , ns: , asm: }
+    - rid: -20
       type: {class: , ns: , asm: }
