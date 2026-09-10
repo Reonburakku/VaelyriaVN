@@ -12,8 +12,8 @@
 
 ; "Tema de campus" cubre Escena 1 y Escena 2 (Días 1-3) según Lista-Audio.md — se retoma acá por
 ; si este script se juega de forma aislada (no depende de que Escena 1 lo haya dejado sonando).
-; @stopBgm corta cualquier pista previa para que no se superponga con esta (@bgm no lo hace solo).
-@stopBgm
+; Es la misma pista que ya viene sonando desde Escena 1/2.1 — sin @stopBgm antes: si ya está
+; sonando, @bgm no la reinicia, sigue igual; si se entra de forma aislada, arranca de cero sin problema.
 @bgm "Musica/Glass Garden Morning"
 
 ; Variables de control del bucle (primer uso en todo el guion).
@@ -26,19 +26,19 @@
 # MenuAlmuerzo
 ; ============================================================
 @if destinos_visitados==0
-    @back "Historia - Manana.LineReveal" time:1.5
+    @back "Historia - Manana.LineReveal" time:2
     Otra mañana productiva.
-    @back "Historia - Medio dia.LineReveal" time:1.5
+    @back "Historia - Medio dia.LineReveal" time:2
 @endif
 @if destinos_visitados==1
-    @back "Arte - Manana.LineReveal" time:1.5
+    @back "Arte - Manana.LineReveal" time:2
     Otra mañana productiva.
-    @back "Arte - Medio dia.LineReveal" time:1.5
+    @back "Arte - Medio dia.LineReveal" time:2
 @endif
 @if destinos_visitados==2
-    @back "Historia - Manana.LineReveal" time:1.5
+    @back "Historia - Manana.LineReveal" time:2
     Otra mañana productiva.
-    @back "Historia - Medio dia.LineReveal" time:1.5
+    @back "Historia - Medio dia.LineReveal" time:2
 @endif
 
 ; Día 1 (quedan los 3) o Día 2 (quedan 2) — se ofrecen los destinos todavía no visitados.
@@ -48,9 +48,9 @@ En donde puedo preguntar hoy?
 
 ; Los tres ya visitados -> Día 4, sin más elecciones.
 @if destinos_visitados==3
-    @back "Arte - Manana.LineReveal" time:1.5
+    @back "Arte - Manana.LineReveal" time:2
     Otra mañana productiva.
-    @back "Arte - Medio dia.LineReveal" time:1.5
+    @back "Arte - Medio dia.LineReveal" time:2
     @addChoice "Quedarme en el aula" goto:#Dia4
 @endif
 
@@ -73,7 +73,7 @@ En donde puedo preguntar hoy?
 ; ============================================================
 @set visito_restaurante=true
 @set destinos_visitados++
-@back "Comedor - Medio dia.LineReveal" time:1.5
+@back "Comedor - Medio dia.LineReveal" time:2
 
 ; SFX pendiente (Lista-Audio.md): "Ambiente de comedor universitario" — platos, murmullo, bullicio, loop.
 
@@ -85,20 +85,23 @@ Apenas menciono "Vaelyria", uno de ellos suelta una risa corta, nada amable.
 ; duplica el diálogo en cada rama porque el tag de autor de Naninovel no puede ser una variable.
 @random
     @group
-        @char ExtraGenericoFemenino scale:1 pos:60,-60
-        ExtraGenericoFemenino: Ah, eres tú. El de la ciudad que no existe.
+        @char EstudianteFemenino scale:1 pos:60,-60
+        EstudianteFemenino: Ah, eres tú. El de la ciudad que no existe.
         Protagonista: ¿Entonces la conoces?
-        ExtraGenericoFemenino: No, no puedo conocer algo que no existe.
-        @hide ExtraGenericoFemenino
+        EstudianteFemenino: No, no puedo conocer algo que no existe.
+        @hide EstudianteFemenino
     @group
-        @char ExtraGenericoMasculino scale:1 pos:60,-60
-        ExtraGenericoMasculino: Ah, eres tú. El de la ciudad que no existe.
+        @char EstudianteMasculino scale:1 pos:60,-60
+        EstudianteMasculino: Ah, eres tú. El de la ciudad que no existe.
         Protagonista: ¿Entonces la conoces?
-        ExtraGenericoMasculino: No, no puedo conocer algo que no existe.
-        @hide ExtraGenericoMasculino
+        EstudianteMasculino: No, no puedo conocer algo que no existe.
+        @hide EstudianteMasculino
 
 Nadie en la mesa tiene nada más que ofrecer.
 Pregunto a unos cuantos estudiantes, antes de comer.
+
+@back "Universidad - Noche.LineReveal" time:2
+Termino un día más
 
 @goto #MenuAlmuerzo
 
@@ -107,7 +110,7 @@ Pregunto a unos cuantos estudiantes, antes de comer.
 ; ============================================================
 @set visito_jardin=true
 @set destinos_visitados++
-@back "Jardin - Medio dia.LineReveal" time:1.5
+@back "Jardin - Medio dia.LineReveal" time:2
 
 ; SFX pendiente (Lista-Audio.md): "Ambiente exterior de jardín" — viento suave, pájaros, loop.
 
@@ -118,17 +121,20 @@ Me acerco suavemente, tratando de sonar casual.
 ; Mismo criterio que en el Restaurante: Estudiante del Jardín anónimo, sprite al azar.
 @random
     @group
-        @char ExtraGenericoFemenino scale:1 pos:60,-60
-        ExtraGenericoFemenino: ¿Vaelyria? Ni idea. ¿Es de una serie o algo?
+        @char EstudianteFemenino scale:1 pos:60,-60
+        EstudianteFemenino: ¿Vaelyria? Ni idea. ¿Es de una serie o algo?
         Protagonista: No, es... da igual. Gracias de todas formas.
-        @hide ExtraGenericoFemenino
+        @hide EstudianteFemenino
     @group
-        @char ExtraGenericoMasculino scale:1 pos:60,-60
-        ExtraGenericoMasculino: ¿Vaelyria? Ni idea. ¿Es de una serie o algo?
+        @char EstudianteMasculino scale:1 pos:60,-60
+        EstudianteMasculino: ¿Vaelyria? Ni idea. ¿Es de una serie o algo?
         Protagonista: No, es... da igual. Gracias de todas formas.
-        @hide ExtraGenericoMasculino
+        @hide EstudianteMasculino
 
 Vuelvo sobre mis pasos antes de que me pregunten por qué me interesa tanto algo que, para ellos, ni siquiera existe.
+
+@back "Universidad - Noche.LineReveal" time:2
+Termino un día más
 
 @goto #MenuAlmuerzo
 
@@ -137,7 +143,7 @@ Vuelvo sobre mis pasos antes de que me pregunten por qué me interesa tanto algo
 ; ============================================================
 @set visito_entrada=true
 @set destinos_visitados++
-@back "Universidad.LineReveal" time:1.5
+@back "Universidad - Manana.LineReveal" time:2
 
 ; SFX pendiente (Lista-Audio.md): "Ambiente exterior de entrada" — viento, sonido urbano lejano, loop.
 
@@ -151,17 +157,16 @@ Uno de los guardias, más por cortesía que por interés real, me escucha hasta 
 ; en Femenino, falta ese prompt todavía; avisar para generarlo si hace falta antes de este destino.
 @random
     @group
-        @char ExtraGenericoFemenino.Lástima scale:1 pos:60,-60
-        ExtraGenericoFemenino: Llevo doce años acá y nunca escuché ese nombre. Lo siento.
-        @hide ExtraGenericoFemenino
+        Celador: Llevo doce años acá y nunca escuché ese nombre. Lo siento.
     @group
-        @char ExtraGenericoMasculino.Lástima scale:1 pos:60,-60
-        ExtraGenericoMasculino: Llevo doce años acá y nunca escuché ese nombre. Lo siento.
-        @hide ExtraGenericoMasculino
+        Celador: Llevo doce años acá y nunca escuché ese nombre. Lo siento.
 
 ; Acotación de tono (guion L.138, "(pensamiento)"): mismo tratamiento en cursiva que usamos con
 ; el protagonista en la Escena 1.
 Protagonista: <i>Bueno, no podía esperar más.</i>
+
+@back "Universidad - Noche.LineReveal" time:2
+Termino un día más
 
 @goto #MenuAlmuerzo
 

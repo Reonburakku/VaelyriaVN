@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a3a80e292b6161f469e443e66d17e4cd
+guid: d0d473e6b03c4b819f4da6a73f187fff
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8603434915775747638
-    second: Universidad - Tarde_0
+      213: 5635694650321341097
+    second: Extra-femenino_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,44 +113,44 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Universidad - Tarde_0
+      name: Extra-femenino_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 65
         y: 0
-        width: 1516
-        height: 1037
+        width: 815
+        height: 1505
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
+      customData:
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ac96efce6857a9880800000000000000
-      internalID: -8603434915775747638
+      spriteID: 9aa09fedc62063e40800000000000000
+      internalID: 5635694650321341097
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     outline: []
-    customData: 
+    customData:
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID:
     internalID: 0
     vertices: []
-    indices: 
+    indices:
     edges: []
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Universidad - Tarde_0: -8603434915775747638
-  mipmapLimitGroupName: 
+      Extra-femenino_0: 5635694650321341097
+  mipmapLimitGroupName:
   pSDRemoveMatte: 0
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
+  userData:
+  assetBundleName:
+  assetBundleVariant:

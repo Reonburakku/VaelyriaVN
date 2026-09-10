@@ -6,7 +6,7 @@
 ; Fondo: "Biblioteca central — estanterías", variante Escena 3 (última hora de la tarde, luz baja
 ; — evening light, low warm lighting, dim lamps, en Lista-Fondos.md) = "Biblioteca - Atardecer",
 ; a diferencia de "Biblioteca - Medio dia" que usa la Escena 2.1.
-@back "Biblioteca - Atardecer.LineReveal" time:1.5
+@back "Biblioteca - Atardecer.LineReveal" time:2
 
 ; "Tema de tensión suave" (introspectivo) asignado a esta escena en Lista-Audio.md.
 @stopBgm
@@ -28,19 +28,22 @@ Oigo pasos que se acercan. Suaves, controlados.
 ; jugador la elige, su nombre queda sin revelar por el resto del prólogo, tal como está en el guion).
 @set NombreEgis="???"
 
-Veo venir al final del pasillo a una chica.
-Recordaría haberla visto anteriormente, su largo cabello blanco y su traje elegante no pasarían desapercibidos.
-Se queda a una distancia prudente.
-Lo suficientemente cerca para hablar sin subir la voz
-Y lo suficientemente lejos para que no exista posibilidad de contacto
-Parece que sabe medir el espacio perfectamente.
 
 ; Nota de arte/dirección (guion L.225): sprite de Egis = "Seria" desde su entrada hasta el cambio
 ; a "Tensa" más abajo. Es su apariencia de identidad base (Lista-Expresiones-Sprites.md, nota de
 ; eficiencia), pero el archivo real se llama "Egis-seria.png" — no hay "Egis.png" genérico, así
 ; que hace falta especificar la apariencia explícitamente (el fallback por defecto elegiría
 ; cualquier otro archivo del personaje al azar).
-@char Egis.Egis-seria scale:1 pos:60,-60
+; Animación de entrada (primera aparición del personaje): aparece en pos:60,60 y se desliza hasta
+; su posición final pos:60,-60 en 2 segundos.
+@char Egis.Egis-seria scale:1 pos:60,60
+@char Egis pos:60,-60 time:2
+Veo venir al final del pasillo a una chica.
+Recordaría haberla visto anteriormente, su largo cabello blanco y su traje elegante no pasarían desapercibidos.
+Se queda a una distancia prudente.
+Lo suficientemente cerca para hablar sin subir la voz
+Y lo suficientemente lejos para que no exista posibilidad de contacto
+Parece que sabe medir el espacio perfectamente.
 
 Egis: Eres el que anda preguntando por una ciudad que nadie conoce, ¿cierto?
 
@@ -137,9 +140,9 @@ Pero tampoco me está contando todo.
 ; adelante (g_ruta_egis_completada==true, ver inicialización y nota en Escena 1/2.3): también se
 ; habilita la Opción B. Uso @addChoice (no @choice) porque necesita condición — @choice no soporta
 ; "if:" (ver doc de RequireChoice).
-@addChoice "A. Seguir el consejo de Egis." goto:#OpcionA
+@addChoice "A. Seguir su consejo." goto:#OpcionA
 @if g_ruta_egis_completada
-    @addChoice "B. Volver a preguntarle a Hazel" goto:#OpcionB
+    @addChoice "B. Volver a preguntarle a Hazel." goto:#OpcionB
 @endif
 @stop
 
@@ -149,9 +152,12 @@ Pero tampoco me está contando todo.
 ; Opción A — Hacerle caso a Egis (guion L.310-343). Cierre del prólogo en primera partida y
 ; siguientes.
 
-Protagonista: Está bien. Voy a dejarlo por un tiempo. Al menos en público.
+Protagonista: Está bien.
+Protagonista: Voy a dejarlo por un tiempo.
+Protagonista: Al menos en público.
 
-Algo en su postura se afloja. Como si se quitara una carga que no le correspondía.
+Algo en su postura se afloja.
+Como si se quitara una carga que no le correspondía.
 
 Egis: Es lo más sensato que vas a hacer esta semana.
 
@@ -177,7 +183,7 @@ Egis: Egis.
 
 ; Acotación de tono (guion L.337, "hablando para sí mismo"): el protagonista no tiene sprite
 ; propio, mismo tratamiento en cursiva que en las escenas anteriores.
-Protagonista: <i>Vaelyria puede esperar. Por ahora.</i>
+Protagonista: <i>Vaelyria puede esperar por ahora.</i>
 
 @hide Egis
 ; La Bibliotecaria grita desde algún otro punto de la biblioteca — no se muestra su sprite (no
@@ -199,7 +205,8 @@ Bibliotecaria: ¡Shhh!
 ; Egis nunca dice su nombre en esta rama (así está en el guion) — NombreEgis se queda en "???"
 ; por el resto del prólogo.
 
-Protagonista: Aprecio el consejo. Pero no puedo simplemente soltarlo.
+Protagonista: Aprecio el consejo.
+Protagonista: Pero no puedo simplemente soltarlo.
 
 Egis no se sorprende.
 Casi parece que lo esperaba.
@@ -207,7 +214,9 @@ Casi parece que lo esperaba.
 Egis: Me imaginaba que ibas a decir algo así. Bueno. Es tu decisión.
 
 Se va sin más reproche, con la misma calma con la que llegó.
-Me quedo solo un momento entre las estanterías, y entonces recuerdo algo: la reacción de Hazel, cuando le pregunté lo mismo. Algo no me cuadra.
+Me quedo solo un momento entre las estanterías, y entonces recuerdo algo: 
+La reacción de Hazel, cuando le pregunté lo mismo. 
+Algo no me cuadra.
 
 Hazel dijo que no sabía nada. Pero no parecía alguien que no sabe nada.
 

@@ -7,7 +7,7 @@
 ; light", por eso "Arte - Tarde" y no "Arte - Manana" (este segundo archivo existe en disco pero
 ; no está documentado para ninguna escena todavía — no se usa acá, avisar si en realidad iba para
 ; otra cosa). Es una locación distinta a la de Escena 1 (Hazel estudia Medicina, no Arqueología).
-@back "Arte - Tarde.LineReveal" time:1.5
+@back "Arte - Tarde.LineReveal" time:2
 
 ; "Tema de curiosidad" (misterio suave) asignado a esta escena en Lista-Audio.md.
 @stopBgm
@@ -26,7 +26,10 @@ No estoy solo: Hazel también se quedó, sentada en su lugar de siempre, ya term
 ; Nota de arte/dirección (guion L.155): sprite de Hazel = "Estudiando" desde su introducción hasta
 ; el cambio a "Sorprendida" más abajo. Nombre de apariencia con el prefijo del personaje
 ; (Hazel-estudiando.png), igual que Egis/Agnes — Naninovel no recorta el prefijo del archivo.
-@char Hazel.Hazel-estudiando scale:1 pos:60,-60
+; Animación de entrada (primera aparición del personaje): aparece en pos:60,60 y se desliza hasta
+; su posición final pos:60,-60 en 2 segundos.
+@char Hazel.Hazel-estudiando scale:1 pos:60,60
+@char Hazel pos:60,-60 time:2
 
 ; SFX pendiente (Lista-Audio.md): "Ambiente de aula vacía" — silencio con eco leve, loop.
 ; SFX pendiente (Lista-Audio.md): "Sonido de escribir en libreta" (reutilizable de Escena 1).

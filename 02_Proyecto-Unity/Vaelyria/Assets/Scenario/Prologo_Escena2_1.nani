@@ -7,14 +7,17 @@
 ; "afternoon light, bright natural lighting" = la variante clara/de día, no la de último rayo de
 ; sol de la Escena 3). En disco corresponde a "Biblioteca - Medio dia", pese a que el guion llama
 ; a esta escena "tarde" — el prompt de generación es el que decide, no el nombre de la sección.
-@back "Biblioteca - Medio dia.LineReveal" time:1.5
+@back "Biblioteca - Medio dia.LineReveal" time:2
 
 ; Lista-Audio.md no asigna un BGM propio a esta escena puntual — por pedido del usuario, cuando
 ; ninguna escena tiene tema específico se usa "Tema de campus" (Glass Garden Morning) como default.
-@stopBgm
+; Es la misma pista que dejó sonando la Escena 1 — sin @stopBgm antes: si ya está sonando, @bgm no
+; la reinicia, sigue igual; si se entra a este script de forma aislada, arranca de cero sin problema.
 @bgm "Musica/Glass Garden Morning"
 
-Estoy frente al mostrador de referencia.
+Después de clases, voy a la bibliotecta.
+Espero encontrar algo de información.
+Luego de buscar un poco en las estanterías, sin éxito, me acerco a la recepción.
 
 ; Nota de arte/dirección (guion L.76): sprite de la Bibliotecaria = "Idle" (expresión base). Se
 ; mantiene en "Idle" durante toda la escena — decisión confirmada de que este personaje solo tiene
@@ -38,6 +41,9 @@ Me mira un segundo de más, con esa mezcla de simpatía y lástima que se les da
 ; termina la escena (convención: los sprites desaparecen al cortar a la siguiente).
 @hide Bibliotecaria
 
+
+@back "Universidad - Noche.LineReveal" time:2
+Termino un día más
 ; ============================================================
 ; Fin Escena 2.1 — continúa en "Días 1 a 3" (elección de destino: Restaurante/Jardín/Entrada).
 ; ============================================================

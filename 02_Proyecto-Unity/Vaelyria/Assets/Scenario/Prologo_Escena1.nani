@@ -10,7 +10,7 @@
 ; (como aparece en CLAUDE.md y el documento de diseño) es el nombre conceptual, no el literal.
 @set g_ruta_egis_completada?=false
 
-@back "Historia - Manana"
+@back "Historia - Manana" time:2
 
 ; Corta cualquier BGM que pudiera venir sonando antes de arrancar el propio, para que no se
 ; superpongan (@bgm no detiene otras pistas por su cuenta — Naninovel permite varias a la vez).
