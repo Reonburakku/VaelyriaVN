@@ -1,0 +1,66 @@
+; ============================================================
+; PRÓLOGO — ESCENA 2.4: Explanada frente al edificio central, atardecer
+; Fuente: 00_Documentacion/Guion/Prologo.md (Borrador 9), líneas 192-217.
+; ============================================================
+
+; Fondo actualizado a "Universidad - Tarde" (reemplaza la referencia anterior a "Explanada -
+; Atardecer", que seguía sin generarse — Lista-Fondos.md documenta la explanada como locación
+; propia con su propio prompt, línea 78, pero se optó por reutilizar la fachada de Universidad).
+@back "Universidad - Tarde.LineReveal" time:2
+
+; "Tema social" (animado) asignado a esta escena en Lista-Audio.md.
+@stopBgm
+@bgm "Musica/footsteps_in_the_snow"
+
+; SFX pendiente (Lista-Audio.md): "Ambiente exterior atardecer" — viento suave, loop.
+
+; Nota de arte/dirección (guion L.194): sprite de Agnes/Vaelyr = "Sonrisa confiada" durante este
+; primer vistazo. El personaje real vive en Characters/Vaelyr/ (su identidad verdadera, oculta al
+; jugador) pero los archivos de sprite usan el alias "Agnes" en el nombre — apariencia exacta tal
+; como está en disco, con el espacio y el "1" al final: "Agnes-confiada 1.png".
+
+Cuando salgo de la universidad llama mi atención un grupo pequeño que va saliendo también.
+Son bastante llamativos, debe ser el grupo de "populares".
+; Animación de entrada (primera aparición del personaje): aparece en pos:65,60 y se desliza hasta
+; su posición final pos:65,-60 en 2 segundos (X en 65, no 60, para no superponerse con la Extra
+; que comparte esta escena — mismo criterio de composición ya documentado en CLAUDE.md).
+@char "Vaelyr.Agnes-confiada 1" scale:1 pos:65,60
+@char Vaelyr pos:65,-60 time:2
+Entre ellos, noto a una chica en particular: rubia, carismática, el centro obvio de gravedad del grupo sin esforzarse por serlo.
+La veo pasar, y por un segundo dejo de pensar en Vaelyria.
+
+; Nota de guion (L.202): Estudiante 1 y 2 usan el sprite "Extra Genérico Femenino" de forma FIJA
+; (no al azar, a diferencia de la Escena 2 — el séquito de Agnes es 100% femenino). Mismo personaje
+; para ambas líneas: son voces anónimas del grupo, no individuos distintos.
+@char EstudianteFemenino scale:1 pos:35,-60
+
+EstudianteFemenino: ...te digo que Marr tiene un alumno nuevo preguntando por una ciudad que no existe, algo como Va, Vael...
+
+EstudianteFemenino: ¡Vael-boy!
+
+; SFX pendiente (Lista-Audio.md): "Risas de grupo (séquito de Agnes)" — distinto del de Escena 1, más animado.
+
+GrupoEstudiantes: JAJAJAJAJA
+
+; Nota de arte/dirección (guion L.206): sprite de Agnes/Vaelyr = "Riendo" en este momento.
+@char "Vaelyr.Agnes-riendo 1"
+@hide EstudianteFemenino
+
+Sigo caminando, y cada vez noto con más claridad las miradas y los comentarios a media voz que me siguen por el campus.
+
+; Nota de guion (L.210): este es el único vistazo a Agnes en el prólogo (acá sin nombre, ya que el
+; protagonista todavía no la conoce) — no hay diálogo directo entre ella y él más allá de este
+; cruce a la distancia. Sigue funcionando como ambientación; no se le agrega tag de autor ni línea
+; propia en ningún momento de esta escena.
+@hide Vaelyr
+
+; Acotación de tono (guion L.212, "(pensamiento)"): mismo tratamiento en cursiva ya usado en las
+; escenas anteriores.
+Protagonista: <i>"Vael-boy." Ya tengo apodo. Genial.</i>
+
+@back "Universidad - Noche.LineReveal" time:2
+Termino un día más
+; ============================================================
+; Fin Escena 2.4 — corta a Escena 3 (La advertencia de Egis).
+; ============================================================
+@goto Prologo_Escena3

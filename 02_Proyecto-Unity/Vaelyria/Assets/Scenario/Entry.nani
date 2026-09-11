@@ -1,0 +1,3 @@
+; Played when a new game starts.
+
+@goto Prologo_Escena1

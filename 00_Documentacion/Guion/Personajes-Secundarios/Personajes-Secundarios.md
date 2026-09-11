@@ -20,6 +20,19 @@ Para cada personaje nuevo, agregar una entrada con esta plantilla:
 
 ---
 
+## Extras genéricos reutilizables
+
+Para personajes de una sola aparición sin identidad propia (una línea de rechazo, un comentario de pasillo) que igualmente necesitan retrato en pantalla por tener diálogo directo con el protagonista, se usan dos sprites genéricos en vez de generar uno nuevo por personaje:
+
+- **Extra Genérico Femenino**
+- **Extra Genérico Masculino**
+
+Son siluetas sin personalidad definida — no representan a nadie en particular y no deberían generar reconocimiento ("ah, es la misma chica de..."). Por defecto, cuál de los dos aparece en escena se determina al azar (50/50) cada vez que el guion necesita un extra sin especificar género. Si la escena sí especifica el género (por ejemplo, el séquito de Agnes, que es 100% femenino), se usa el genérico correspondiente de forma fija, no aleatoria.
+
+*[Nota técnica para Naninovel: implementar como una función simple que elige entre los dos sprites al azar en cada instancia, salvo que el nodo de guion fuerce un género específico.]*
+
+---
+
 ## Prólogo
 
 ### Prof. Isolde Marr
@@ -44,8 +57,17 @@ Para cada personaje nuevo, agregar una entrada con esta plantilla:
 
 - **Rol**: Estudiante 1 comenta el chisme sobre el protagonista; Estudiante 2 completa la frase acuñando el apodo "Vael-boy" — nacido en esta escena, se convierte en el apodo que usan de ahí en más tanto el protagonista (en su propia narración) como Egis (en la Escena 3).
 - **Dónde aparece**: Escena 2.3 del prólogo.
-- **¿Necesita sprite?**: No — son voces anónimas dentro de un grupo de fondo, sin identidad propia ni intención de que se reconozcan más adelante.
+- **¿Necesita sprite?**: Sí, pero no propio — usan el **Extra Genérico Femenino** (ver sección al principio de este documento), ya que el séquito de Agnes es 100% femenino y no queda librado al azar.
 - **Notas**: si en algún bloque posterior conviene individualizar a alguien del séquito de Agnes (para darle más textura a su vida social), se puede promover a alguna de estas dos entradas a un personaje completo en ese momento — sobre todo a Estudiante 2, que le puso nombre al apodo del protagonista.
+
+---
+
+### Estudiante del Restaurante, Estudiante del Jardín, Guardia de la Entrada
+
+- **Rol**: rechazan las preguntas del protagonista sobre Vaelyria durante los días 1-3 de la Escena 2, uno por destino.
+- **Dónde aparece**: Escena 2, sección "Días 1 a 3", del prólogo.
+- **¿Necesita sprite?**: Sí, pero no uno propio — usan los **Extras Genéricos** (ver sección al principio de este documento). Ninguno de los tres especifica género en el guion, así que el sprite (Femenino o Masculino) se elige al azar en cada uno, de forma independiente.
+- **Notas**: ninguno de los tres tiene intención de reaparecer. Si en algún momento conviene individualizar a alguno (por ejemplo, si el guardia se vuelve recurrente como color de campus), se puede promover a una ficha completa con sprite propio.
 
 ---
 

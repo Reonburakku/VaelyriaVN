@@ -1,56 +1,65 @@
-# Prólogo — Guion final (Borrador 6)
+Prólogo — Guion final (Borrador 9)
 
-> Tarea 10 del plan de trabajo — Fase 1 (Vertical Slice). Prólogo común a todas las partidas, ~3 escenas. Incluye el punto de elección de ruta. No incluye contenido explícito ni desnudos (política confirmada).
+> Tarea 10 del plan de trabajo — Fase 1 (Vertical Slice). Prólogo común a todas las partidas. Incluye el punto de elección de ruta. No incluye contenido explícito ni desnudos (política confirmada).
 >
-> **Cambio respecto al Borrador 5**: en la Escena 3, el tramo donde el protagonista presionaba a Egis sobre su pasado ahora es una elección de sabor con dos opciones ("¿Consecuencias?" / "¿Como un apodo?") que convergen en el mismo punto — el remate "Eso me convertiría en Vael-chica" es nuevo y funciona como un tercer guiño sutil (ver nota al final sobre sumarlo a la lista oficial de pistas plantadas). Nueva expresión: Egis - Triste.
+> **Cambio respecto al Borrador 8**: reescribí partes del guion para que quede escrito con mi forma de escribir. Hice cambios menores para que los diálogos de los personajes coincidan con la personalidad que imagino para ellos.
 >
-> Notas técnicas para Naninovel (implementación en tarea 15) marcadas entre corchetes en cursiva. Su nombre real lo define el jugador vía variable — donde haga falta pronunciarlo en diálogo ajeno, se marca `{Nombre}`.
+> **Revisión aplicada sobre este Borrador 9**: corrección ortográfica, dos restos de voseo pasados a tuteo ("tenés"→"tienes", "buscás"→"buscas"), una acotación de tono duplicada, y un "Valirya" tratado como typo de "Vaelyria" (según la regla ya acordada). El contenido narrativo no se tocó — ver el resto de la conversación para los puntos que sí requieren una decisión tuya antes de tocarlos.
 >
-> Longitud aproximada: ~4,300 palabras.
+> Notas técnicas para Naninovel (implementación en tarea 15) marcadas entre corchetes en cursiva. Su nombre real lo define el jugador vía variable — donde haga falta pronunciarlo en diálogo ajeno, se marca `{Nombre}`. El nombre de Egis usa el mismo mecanismo de variable (name binding) pero en sentido inverso — empieza oculto ("???") y se revela a mitad de la Escena 3; ver las notas técnicas puntuales en esa escena.
 
 ---
 
 ## ESCENA 1 — Primer día
 
-Entro al aula de la Facultad de Historia y Arqueología con la mochila al hombro. El edificio tiene más de cincuenta años, dicen, pero nadie lo diría por cómo luce: fachada de castillo medieval que, contra todo pronóstico, parece recién inaugurada — piedra pulida, ventanales altos sin una sola mancha. Es media mañana de finales de verano, y el aula se va llenando de a poco con otros estudiantes de primer año. Algunos vienen de saco, la mayoría en ropa más suelta; no hay uniforme obligatorio, solo una vieja costumbre de vestir "como corresponde" que unos pocos siguen al pie de la letra.
+Entro al aula de arqueología. Es media mañana de finales de verano, y el aula se va llenando de a poco con otros estudiantes de primer año. Noto la formalidad en la vestimenta de la mayoría, es evidente que quieren empezar con pie derecho.
 
-Encuentro un lugar cerca de la ventana, dos filas del fondo. Dejo la mochila en el piso y saco mi libreta, ya gastada en los bordes — la misma que uso desde hace años para anotar cada mención de "la gran ciudad de Vaelyria" que encuentro: libros de historia antigua, crónicas de viajeros, notas al pie de ediciones académicas casi olvidadas. Nunca una fuente principal. Siempre una referencia de paso, como si todo el mundo diera por sentado que el lector ya sabía de qué ciudad se hablaba. Esa misma facilidad mía para retener y conectar datos sueltos —algo que mis profesores de secundaria ya calificaban de "fuera de lo común"— fue lo que me permitió aprobar, meses atrás, el examen de admisión para estudiantes extranjeros: fama de ser el más exigente de toda la universidad, y mi única puerta de entrada real, sin familia ni contactos en la ciudad.
+Encuentro un lugar cerca de la ventana, con buena iluminación. Dejo la maleta en el piso y saco mi libreta, ya gastada en los bordes, reviso las notas que he tomado acerca de "la gran ciudad de Vaelyria" siempre me ha llamado la atención desde que supe de ella, una gran ciudad tecnológica, que ha sido mencionada en diversos textos, aunque no he encontrado literatura que hable específicamente de esta. A eso vine, deduje que esta es la ubicación, aunque ahora tiene otro nombre, espero encontrar más información que las cortas menciones que he conseguido.
 
-Tres años juntando migajas. Y ahora vivo a quince minutos caminando del sitio.
-
-Entra la profesora Isolde Marr — cincuentona, abrigo de pana pese al calor, un cuaderno de asistencia bajo el brazo. Deja sus cosas en el escritorio sin apuro y mira al grupo con la calma de quien ha dado esta misma clase inaugural veinte veces.
+Entra la profesora, una mujer tan elegante que usa su abrigo de pana a pesar del calor. Deja sus cosas en el escritorio sin apuro y mira al grupo con la calma de quien ha dado esta misma clase innumerables veces.
 
 *[Nota de arte/dirección: sprite de Marr = "Idle" (expresión base) desde su entrada hasta el cambio a "Pensativa" más abajo.]*
 
 **PROF. MARR**
-Bienvenidos a Introducción a la Arqueología. Antes de repartir el programa, quiero que cada uno diga su nombre y, si ya lo tiene claro, qué período o región le interesa investigar. No hace falta que sea definitivo — para eso están los próximos cuatro años.
+Bienvenidos a Introducción a la Arqueología. Antes de repartir el programa, quiero que cada uno diga su nombre y, si ya lo tiene claro, qué período o región le interesa investigar. Si aún no lo saben, les recomiendo empezar a pensarlo, la historia no se descubre por casualidad.
 
 Empieza la ronda de presentaciones. Menciones dispersas de Mesopotamia, la Ruta de la Seda, arqueología subacuática del Mediterráneo. Nada que se detenga demasiado. Me llega el turno.
 
 *[Nota técnica para Naninovel: este es el primer uso de la variable `{Nombre}` en todo el guion — es el punto donde se le debe pedir al jugador que ingrese su nombre (o confirme el que venga por defecto, ver Protagonista.md), justo antes de mostrar esta línea. Sumarlo a la tarea 21 (listado de flags/variables) y a la tarea 15 (implementación del prólogo).]*
 
 **PROTAGONISTA**
-Me llamo {Nombre}. Vine desde fuera del país, específicamente para esto — quiero investigar Vaelyria.
+Me llamo {Nombre}. Vine  específicamente para investigar sobre Vaelyria.
 
+.........
 Silencio breve. No el silencio de quien reconoce el nombre y lo sopesa, sino el de quien lo escucha por primera vez y no sabe bien qué hacer con él. La profesora Marr frunce el ceño, genuinamente pensativa, no hostil.
 
 *[Nota de arte/dirección: sprite de Marr = "Pensativa" en este momento.]*
 
 **PROF. MARR**
-¿Vaelyria... como asentamiento, decís? No me suena el nombre. ¿Es una variante regional de algo, o...?
+¿Vaelyria... como asentamiento, dices? No me suena el nombre. ¿Es una variante regional de algo, o...?
 
 **PROTAGONISTA**
-Aparece mencionada en varias fuentes secundarias como una ciudad importante, próspera, con un crecimiento inusualmente rápido para su época. Nunca encontré un texto que la describiera directamente, solo referencias de paso, como si el lector ya debiera conocerla.
+Aparece mencionada en varias fuentes como una ciudad importante, próspera, con un crecimiento inusualmente rápido para su época. Nunca encontré un texto que la describiera directamente, solo referencias de paso, como cualquier ciudad que simplemente existe.
 
-Un par de risas contenidas a mi alrededor — no crueles todavía, más bien nerviosas, el tipo de risa que aparece cuando alguien dice algo raro y nadie sabe si tomárselo en serio. La profesora Marr no se ríe. Anota algo, seria.
+**ESTUDIANTES DE FONDO**
+
+¿Vaelyria?
+
+¿Te suena ese nombre?
+
+Para nada
 
 **PROF. MARR**
-No conozco ese nombre, y llevo veintitrés años en esto. Puede que sea un topónimo mal transliterado, o una confusión con otra ciudad. Traeme las fuentes que tengas cuando quieras y le echamos un ojo con calma — pero te adelanto que si fuera un asentamiento real de peso histórico, yo tendría que haber oído hablar de él.
+No conozco ese nombre. Puede que sea una mala traducción, o una confusión con otra ciudad. Tráigame las fuentes que tenga cuando quiera y le echamos un ojo con calma. Aunque es difícil que yo no haya escuchado de una ciudad tan importante como la que menciona.
 
 **PROTAGONISTA**
-Claro. Se las traigo.
+Por supuesto.
 
-Ella sigue con la ronda. Anoto algo rápido en mi libreta — no una duda, sino una certeza reforzada: nadie aquí ha oído el nombre. No es que lo confundan con otra cosa. Es que no existe para ellos.
+Ella sigue con la ronda.
+
+**PROTAGONISTA**
+*(hablando para sí mismo)*
+Alguien debería saber.
 
 *[Nota de dirección: la reacción de Marr debe leerse como genuinamente profesional y curiosa, no despectiva — es importante que el primer rechazo no se sienta personal. El endurecimiento social viene después, en la Escena 2, cuando la pregunta se repite fuera de un contexto académico protegido.]*
 
@@ -60,7 +69,7 @@ Ella sigue con la ronda. Anoto algo rápido en mi libreta — no una duda, sino 
 
 ## ESCENA 2 — Preguntas sin respuesta
 
-*Montaje de tres días distintos, mismo semestre, distintos lugares del campus. Se puede resolver con transición de fundido o con un cambio de fondo + indicador de "unos días después" en pantalla.*
+*Estructura de esta escena: después de la biblioteca (2.1), tres días de intentos fallidos con elección de destino a cargo del jugador, seguidos de un cuarto día que fuerza la decisión de quedarse en el aula (2.3) — que a su vez desemboca en el cruce con Agnes esa misma tarde (2.4).*
 
 ### 2.1 — Biblioteca central, tarde
 
@@ -69,7 +78,7 @@ Estoy frente al mostrador de referencia. La bibliotecaria, una mujer mayor con l
 *[Nota de arte/dirección: sprite de la Bibliotecaria = "Idle" (expresión base) desde que aparece hasta el cambio a "Lástima" más abajo.]*
 
 **BIBLIOTECARIA**
-Busqué en el catálogo general y en los fondos de historia regional. Nada bajo "Vaelyria", ni como entrada principal ni como variante. Si querés, te dejo anotado el pedido y lo reviso con más calma esta semana.
+Busqué en el catálogo general y en los índices de historia regional. No encuentro nada relacionado con Vaelyria, ni como tema principal ni como referencia. Si quieres, te dejo anotado el pedido y lo reviso con más calma esta semana.
 
 **PROTAGONISTA**
 Se lo agradezco. Voy a seguir buscando por mi cuenta también.
@@ -78,16 +87,79 @@ Me mira un segundo de más, con esa mezcla de simpatía y lástima que se les da
 
 *[Nota de arte/dirección: sprite de la Bibliotecaria = "Lástima" en este momento.]*
 
-### 2.2 — Aula vacía, hora de almuerzo
+### Días 1 a 3 — Preguntando por el campus, horario de almuerzo
 
-Es la hora de almuerzo. La mayoría del curso se fue a comer algo, pero yo me quedo en el aula de historia antigua con mi libreta — prefiero seguir revisando notas antes que cruzarme con gente que ya empieza a mirarme raro. No estoy solo: Hazel también se quedó, sentada en su lugar de siempre, ya terminó de comer y aprovecha el rato libre para estudiar antes de que vuelva el resto.
+*[Nota técnica para Naninovel: bucle de 3 días. Cada día se ofrece una elección entre los destinos que todavía no se visitaron — el Día 1 ofrece los 3, el Día 2 ofrece los 2 restantes, y el Día 3 avanza directo al único que queda, sin necesidad de mostrar una elección real ese día. El contenido de cada destino no cambia según el día en que se visite; lo único que varía es el orden, que depende de lo que elige el jugador. Los tres destinos terminan visitándose siempre, sin excepción.]*
+
+Durante el almuerzo, puedo aprovechar para obtener información.
+
+**[Elección de destino]**
+
+> **Ir al restaurante** (comedor universitario)
+> **Ir al jardín**
+> **Ir a la entrada de la universidad**
+
+#### Destino: Restaurante
+
+Me acerco a una mesa donde reconozco un par de caras de mi clase de arqueología. Apenas menciono "Vaelyria", uno de ellos suelta una risa corta, nada amable.
+
+**ESTUDIANTE**
+Ah, eres tú. El de la ciudad que no existe.
+
+**PROTAGONISTA**
+¿Entonces la conoces?
+
+**ESTUDIANTE**
+No, no puedo conocer algo que no existe.
+
+Nadie en la mesa tiene nada más que ofrecer.
+
+Pregunto a unos cuantos estudiantes, antes de comer.
+
+#### Destino: Jardín
+
+El jardín interior de la facultad está tranquilo a esta hora. Veo un par de estudiantes leyendo bajo la sombra de un árbol. Me acerco suavemente, tratando de sonar casual.
+
+**ESTUDIANTE**
+¿Vaelyria? Ni idea. ¿Es de una serie o algo?
+
+**PROTAGONISTA**
+No, es... da igual. Gracias de todas formas.
+
+Vuelvo sobre mis pasos antes de que me pregunten por qué me interesa tanto algo que, para ellos, ni siquiera existe.
+
+#### Destino: Entrada de la universidad
+
+Pruebo en la entrada, con el personal de seguridad y algunos estudiantes que van llegando tarde. Uno de los guardias, más por cortesía que por interés real, me escucha hasta el final.
+
+**GUARDIA**
+Llevo doce años acá y nunca escuché ese nombre. Lo siento.
+
+*[Nota de arte/dirección: sprite de guardia genérico = "Lástima" en este momento.]*
+
+**PROTAGONISTA** *(pensamiento)*
+Bueno, no podía esperar más.
+
+*[Nota de guion: los tres destinos usan personajes anónimos de una sola aparición (Estudiante, Estudiante, Guardia) — usan los sprites genéricos "Extra Genérico Femenino/Masculino" (ver `Personajes-Secundarios.md`), elegidos al azar en cada uno ya que ninguno especifica género.]*
+
+### Día 4
+
+**[Única opción disponible]**
+
+> **Quedarme en el aula**
+
+*Corte a la Escena 2.3.*
+
+### 2.3 — Aula vacía, hora de almuerzo
+
+Me quedo en el aula de la electiva de arte, reviso mi vieja libreta con apuntes sobre Vaelyria. La mayoría sale corriendo a almorzar, pero no tengo ganas de cruzarme con gente que ya empieza a mirarme raro. No estoy solo: Hazel también se quedó, sentada en su lugar de siempre, ya terminó de comer y aprovecha el rato libre para estudiar antes de que vuelva el resto.
 
 *[Nota de arte/dirección: sprite de Hazel = "Estudiando" desde su introducción hasta el cambio a "Sorprendida" más abajo.]*
 
-Me acerco.
+No tengo nada qué perder.
 
 **PROTAGONISTA**
-¿Hazel, cierto? Estuviste en la clase de Marr el lunes. Te quería preguntar algo rápido, si tenés un segundo.
+¿Hazel, cierto? Compartimos la electiva de arte. Te quería preguntar algo rápido, si tienes un segundo.
 
 **HAZEL**
 *(sin levantar mucho la vista)*
@@ -115,11 +187,11 @@ Me alejo sin darle más vueltas al asunto.
 
 Mismo diálogo, con un solo agregado: entre la pregunta del protagonista y la respuesta de Hazel se inserta esta línea de narración —
 
-Por una fracción de segundo algo le cambia la cara: la mano se le detiene a mitad de un trazo, un parpadeo que dura un poco más de lo normal. La primera vez no le di importancia. Ahora sé que no debería habérsela quitado.
+Por una fracción de segundo algo le cambia la cara: la mano se le detiene a mitad de un trazo, un parpadeo que dura un poco más de lo normal.
 
-### 2.3 — Explanada frente al edificio central, atardecer
+### 2.4 — Explanada frente al edificio central, atardecer
 
-Un grupo grande cruza la explanada entre risas — claramente populares, con una energía centrípeta alrededor de una chica en particular: rubia, carismática, el centro obvio de gravedad del grupo sin esforzarse por serlo. No la conozco. La veo pasar, y por un segundo dejo de pensar en Vaelyria del todo.
+Un grupo pequeño cruza la explanada entre risas, son bastante llamativos, deben ser el grupo de "populares", entre ellos, noto a una chica en particular: rubia, carismática, el centro obvio de gravedad del grupo sin esforzarse por serlo. No la conozco. La veo pasar, y por un segundo dejo de pensar en Vaelyria.
 
 *[Nota de arte/dirección: sprite de Agnes = "Sonrisa confiada" durante este primer vistazo.]*
 
@@ -131,6 +203,8 @@ Tengo que admitir que es muy linda.
 
 **ESTUDIANTE 2 (VOZ ENTRE EL GRUPO)**
 ¡Vael-boy!
+
+*[Nota de guion: Estudiante 1 y 2 usan el sprite "Extra Genérico Femenino" (ver `Personajes-Secundarios.md`) de forma fija, no al azar — el séquito de Agnes es 100% femenino.]*
 
 Risas de todo el grupo — incluida ella.
 
@@ -149,31 +223,35 @@ Sigo caminando, y cada vez noto con más claridad las miradas y los comentarios 
 
 ## ESCENA 3 — La advertencia de Egis
 
-Estoy solo entre las estanterías de la sección de historia regional, en la biblioteca central, ya casi vacía a esta hora de la tarde. Reviso el lomo de libros que ya revisé antes — más por costumbre que por esperanza. Oigo pasos que se acercan. No apurados. Controlados.
+Estoy solo entre las estanterías de la sección de historia regional, en la biblioteca central. Ya está casi vacía a esta hora de la tarde. Reviso el lomo de libros que ya revisé antes, más por costumbre que por esperanza. Oigo pasos que se acercan. Suaves, controlados.
 
-Egis aparece al final del pasillo. La reconozco de las clases compartidas, aunque no somos cercanos. Se queda a una distancia prudente, ni fría ni cálida — la distancia de alguien que mide el espacio con cuidado, siempre.
+Veo venir al final del pasillo a una chica. Recordaría haberla visto anteriormente, su largo cabello blanco y su traje elegante no pasarían desapercibidos. Se queda a una distancia prudente, lo suficientemente cerca para hablar sin subir la voz, y lo suficientemente lejos para que no exista posibilidad de contacto, parece que sabe medir el espacio perfectamente.
 
 *[Nota de arte/dirección: sprite de Egis = "Seria" desde su entrada hasta el cambio a "Tensa" más abajo.]*
 
+*[Nota técnica para Naninovel: el jugador todavía no conoce el nombre de Egis en este punto — usar name binding (Display Name atado a una variable, ej. {NombreEgis}) en vez de un nombre fijo en la configuración del personaje. Al principio de esta escena, antes de su primera línea: `@set NombreEgis="???"`. El cambio a su nombre real va marcado más abajo, en el momento exacto donde se lo dice al protagonista — no antes.]*
+
 **EGIS**
-¿Sos vos el que anda preguntando por una ciudad que nadie conoce?
+Eres el que anda preguntando por una ciudad que nadie conoce, ¿cierto?
 
 **PROTAGONISTA**
-Ese soy yo. Aunque a esta altura ya perdí la cuenta de a cuántas personas les pregunté.
+Sí soy. Aunque ya perdí la cuenta de a cuántas personas les pregunté.
 
 **EGIS**
 A bastantes. Se corrió la voz.
 
-Silencio breve, no incómodo todavía. Se acerca un poco más, pero mantiene distancia física — no se sienta ni se apoya contra el estante junto a mí, se queda de pie, con los brazos cruzados de forma casi protectora.
+.....
+
+Se acerca un poco más, pero mantiene su postura firme y distante, se queda de pie, con los brazos cruzados de forma casi protectora.
 
 **EGIS**
-No vine a burlarme, si es lo que estás pensando. Vine a decirte algo que probablemente nadie más te va a decir con esta claridad: pará.
+No vine a burlarme, si es lo que estás pensando. Vine a decirte algo que probablemente nadie más te va a decir con esta claridad: detente.
 
 **PROTAGONISTA**
-¿Perdón?
+¿Disculpa?
 
 **EGIS**
-Pará de preguntar. No porque esté mal tener curiosidad — está bien, de hecho, mejor que la mayoría de la gente acá, que no le importa nada más allá de aprobar la materia. Pero seguir insistiendo en algo que nadie reconoce, en voz alta, frente a cada vez más gente... no te va a dar la respuesta que buscás. Y podés tener consecuencias.
+Deja de preguntar. No creo que esté mal tener curiosidad, de hecho, creo que es mejor que solo intentar aprobar las materias, como hacen la mayoría. Pero seguir insistiendo en algo que nadie reconoce, en voz alta, frente a cada vez más gente... no te va a dar la respuesta que buscas. Y puedes tener consecuencias.
 
 *[Nota técnica para Naninovel: acá se abre un menú de dos opciones. Es una elección de sabor — ambas convergen en el mismo punto de la escena, no genera ninguna variable ni afecta ninguna ruta.]*
 
@@ -182,12 +260,12 @@ Pará de preguntar. No porque esté mal tener curiosidad — está bien, de hech
 
 **Si el jugador elige "¿Consecuencias?":**
 
-No responde de inmediato. Por un segundo algo se tensa en su postura — no enojo, algo más cerca de una guardia que se cierra de forma automática, ensayada.
+No responde de inmediato. Por un segundo algo se tensa en su postura, como si subiera la guardia.
 
 *[Nota de arte/dirección: sprite de Egis = "Tensa" en este momento.]*
 
 **EGIS**
-Aprendí, hace tiempo, que hay preguntas que es mejor no hacer en voz alta. No todas tienen que ver con historia antigua.
+Aprendí, hace tiempo, que hay preguntas que es mejor no hacer en voz alta. No todos tienen tanto interés.
 
 **Si el jugador elige "¿Como un apodo?":**
 
@@ -200,23 +278,26 @@ Ojalá solo fuera un apodo.
 **Sigue igual sea cual sea la opción elegida:**
 
 **PROTAGONISTA**
-¿Me seguirías hablando si pasa eso?
+¿Me dejarías de hablar si pasa eso?
+
+**EGIS**
+¿Eh?
+
+**PROTAGONISTA**
+Bueno, no quisiera que esta fuera la última charla.
 
 **EGIS**
 *(con algo parecido a media sonrisa, la primera grieta en su tono)*
-Eso me convertiría en Vael-chica.
+Preferiría no ser la Vael-chica.
 
 *[Nota de arte/dirección: sprite de Egis = "Sonrisa tímida" en este momento.]*
 
-Me mira un momento más, evaluándome — no con desconfianza, más bien con la curiosidad contenida de alguien que reconoce algo familiar y no está segura de qué hacer con eso.
+Me mira un momento más, evaluándome, con la curiosidad de alguien que reconoce algo familiar y no está segura de qué hacer con eso.
 
 **EGIS**
-Recién llegaste. Sos extranjero, no conocés a nadie todavía, y ya estás construyendo fama de raro antes de terminar el primer mes. Podés seguir así si querés — es tu decisión, no la mía. Pero si te importa hacer amigos acá, si te importa que la gente te trate como alguien normal y no como "Vael-boy"... yo dejaría de preguntar. Al menos así, tan abiertamente.
+Recién llegaste. No conoces a nadie todavía, y ya estás construyendo fama de raro antes de terminar el primer mes. Puedes seguir así si quieres. Pero si te importa hacer amigos acá, si te importa que la gente te trate como alguien normal, es mejor no llamar tanto la atención.
 
-Silencio. La miro, y por primera vez en toda la conversación registro algo más allá de mis propias ganas de seguir investigando: que ella no está actuando por fastidio ni por seguir una norma social cualquiera. Hay algo genuino ahí, algo que no termino de entender, pero que me pesa.
-
-**PROTAGONISTA** *(pensamiento)*
-No me está mintiendo. Y tampoco me está contando todo.
+Silencio. La miro, y noto algo más allá de mis propias ganas de seguir investigando: ella no está actuando por fastidio ni por seguir una norma social cualquiera. Hay algo genuino ahí, algo que no termino de entender. No me está mintiendo. Y tampoco me está contando todo.
 
 ---
 
@@ -228,8 +309,8 @@ No me está mintiendo. Y tampoco me está contando todo.
 
 **Elección presentada al jugador:**
 
-> **A. Hacerle caso a Egis.** *(Siempre disponible.)*
-> **B. Preguntarle a Hazel en su lugar.** *(Solo visible desde la 2ª partida.)*
+> **A. Seguir el consejo de Egis.** *(Siempre disponible.)*
+> **B. Volver a preguntarle a Hazel** *(Solo visible desde la 2ª partida.)*
 
 ---
 
@@ -238,7 +319,7 @@ No me está mintiendo. Y tampoco me está contando todo.
 **PROTAGONISTA**
 Está bien. Voy a dejarlo por un tiempo. Al menos en público.
 
-Algo en su postura se afloja, apenas. No es alivio del todo — es más parecido a que una carga que no le correspondía se hace un poco más liviana.
+Algo en su postura se afloja. Como si se quitara una carga que no le correspondía.
 
 **EGIS**
 Es lo más sensato que vas a hacer esta semana.
@@ -256,6 +337,8 @@ Se da media vuelta para irse.
 
 **EGIS**
 Egis.
+
+*[Nota técnica para Naninovel: acá se revela el nombre — `@set NombreEgis="Egis"`, justo antes o junto con esta línea. De acá en adelante (resto del prólogo y toda su ruta) el Display Name ya muestra "Egis" en vez de "???" automáticamente.]*
 
 *[Nota de arte/dirección: sprite de Egis = "Mirada hacia atrás" en este momento.]*
 
@@ -278,11 +361,11 @@ Aprecio el consejo. Pero no puedo simplemente soltarlo.
 Egis no se sorprende — casi parece que lo esperaba.
 
 **EGIS**
-Me imaginaba que ibas a decir algo así. Bueno. Es tu reputación, no la mía.
+Me imaginaba que ibas a decir algo así. Bueno. Es tu decisión.
 
-Se va sin más reproche, sin dramatismo — cierra el intercambio con la misma calma controlada con la que lo abrió. Me quedo solo un momento entre las estanterías, y entonces recuerdo algo: la reacción casi imperceptible de Hazel, días atrás, cuando le pregunté lo mismo. Algo que en su momento no le di importancia, y que ahora, con la advertencia de Egis todavía fresca, empieza a pesarme distinto.
+Se va sin más reproche, con la misma calma con la que llegó. Me quedo solo un momento entre las estanterías, y entonces recuerdo algo: la reacción de Hazel, cuando le pregunté lo mismo. Algo no me cuadra.
 
-Hazel dijo que no sabía nada. Pero no lo dijo como alguien que no sabe nada.
+Hazel dijo que no sabía nada. Pero no parecía alguien que no sabe nada.
 
 *Corte.*
 
