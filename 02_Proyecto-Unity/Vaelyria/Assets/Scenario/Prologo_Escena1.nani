@@ -3,12 +3,6 @@
 ; Fuente: 00_Documentacion/Guion/Prologo.md (Borrador 9), líneas 13-66.
 ; ============================================================
 
-; Variable global persistente entre partidas (documento de diseño, sección 2 — "no se resetea al
-; empezar una partida nueva"). Se inicializa acá, en el primerísimo punto del juego, con asignación
-; condicional (?=) para no pisar el valor si ya viene de una partida anterior. El prefijo "g_" es
-; el que exige Naninovel para que persista entre partidas nuevas — "ruta_egis_completada" a secas
-; (como aparece en CLAUDE.md y el documento de diseño) es el nombre conceptual, no el literal.
-@set g_ruta_egis_completada?=false
 
 @back "Historia - Manana" time:2
 

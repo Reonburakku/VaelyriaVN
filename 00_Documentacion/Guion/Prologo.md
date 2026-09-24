@@ -1,3 +1,4 @@
+
 Prólogo — Guion final (Borrador 9)
 
 > Tarea 10 del plan de trabajo — Fase 1 (Vertical Slice). Prólogo común a todas las partidas. Incluye el punto de elección de ruta. No incluye contenido explícito ni desnudos (política confirmada).
@@ -5,6 +6,8 @@ Prólogo — Guion final (Borrador 9)
 > **Cambio respecto al Borrador 8**: reescribí partes del guion para que quede escrito con mi forma de escribir. Hice cambios menores para que los diálogos de los personajes coincidan con la personalidad que imagino para ellos.
 >
 > **Revisión aplicada sobre este Borrador 9**: corrección ortográfica, dos restos de voseo pasados a tuteo ("tenés"→"tienes", "buscás"→"buscas"), una acotación de tono duplicada, y un "Valirya" tratado como typo de "Vaelyria" (según la regla ya acordada). El contenido narrativo no se tocó — ver el resto de la conversación para los puntos que sí requieren una decisión tuya antes de tocarlos.
+>
+> **Ajuste posterior**: la Escena 3 (Egis) se movió a un día separado (Sábado) — antes sucedía el mismo día que la Escena 2.4 (Agnes), lo cual contradecía el sistema de calendario del Bloque A, donde Egis está en la biblioteca los sábados y Hazel en el aula los viernes. Ver `Bloque-A-Egis-Esquema.md`.
 >
 > Notas técnicas para Naninovel (implementación en tarea 15) marcadas entre corchetes en cursiva. Su nombre real lo define el jugador vía variable — donde haga falta pronunciarlo en diálogo ajeno, se marca `{Nombre}`. El nombre de Egis usa el mismo mecanismo de variable (name binding) pero en sentido inverso — empieza oculto ("???") y se revela a mitad de la Escena 3; ver las notas técnicas puntuales en esa escena.
 
@@ -217,11 +220,15 @@ Sigo caminando, y cada vez noto con más claridad las miradas y los comentarios 
 **PROTAGONISTA** *(pensamiento)*
 "Vael-boy." Ya tengo apodo. Genial.
 
-*Corte a Escena 3.*
+*Corte. Termina el día.*
 
 ---
 
-## ESCENA 3 — La advertencia de Egis
+## ESCENA 3 — La advertencia de Egis (Sábado)
+
+*[Nota técnica para Naninovel: con esta escena arranca un nuevo día dentro del sistema de calendario que se define en el Bloque A — actualizar el indicador de día en UI a "Sábado" (Día 6) antes de que arranque la escena. Ver `Bloque-A-Egis-Esquema.md`, sección "Sistema de días y conversaciones".]*
+
+Al día siguiente, sábado, vuelvo a la biblioteca — no porque se me haya ocurrido algo nuevo que buscar, sino porque no tengo mejor lugar donde estar.
 
 Estoy solo entre las estanterías de la sección de historia regional, en la biblioteca central. Ya está casi vacía a esta hora de la tarde. Reviso el lomo de libros que ya revisé antes, más por costumbre que por esperanza. Oigo pasos que se acercan. Suaves, controlados.
 
