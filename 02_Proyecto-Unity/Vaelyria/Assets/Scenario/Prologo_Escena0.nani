@@ -1,0 +1,18 @@
+; Variable global persistente entre partidas (documento de diseño, sección 2 — "no se resetea al
+; empezar una partida nueva"). Se inicializa acá, en el primerísimo punto del juego, con asignación
+; condicional (?=) para no pisar el valor si ya viene de una partida anterior. El prefijo "g_" es
+; el que exige Naninovel para que persista entre partidas nuevas — "ruta_egis_completada" a secas
+; (como aparece en CLAUDE.md y el documento de diseño) es el nombre conceptual, no el literal.
+@set g_ruta_egis_completada?=false
+
+@back "Universidad - Manana" time:2
+
+- La Universidad Pública de Vantia.
+
+Una prestigiosa universidad ubicada en la próspera ciudad de Vantia.
+Ha sido reconocida por la calidad de sus egresados.
+Estoy seguro de que todo padre quiere que sus hijos estudien acá.
+
+
+Desde que recuerdo, he estado interesado en la historia del mundo.
+Grandes ciudades e imperios han nacido, prosperado y caído a travez del tiempo.

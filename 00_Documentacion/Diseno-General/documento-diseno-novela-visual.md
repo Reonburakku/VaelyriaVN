@@ -9,7 +9,7 @@
 | Finales            | 9 finales totales (3 por cada heroína)                                                                             |
 | Duración objetivo | Media: 4–8 horas de lectura total                                                                                  |
 | Clasificación     | Maduro (temas adultos) — sin desnudos; intimidad insinuada mediante elipsis/fundido a negro, sin mostrar el cuerpo |
-| Plataforma         | Móvil (Android/iOS)                                                                                                |
+| Plataforma         | Móvil (Android/iOS) + PC (Steam)                                                                                   |
 | Monetización      | Pago único                                                                                                         |
 | Audio              | Música + efectos + voces parciales                                                                                 |
 | Equipo             | Desarrollador solo, 13 años de experiencia en C#, poca experiencia en desarrollo móvil                            |
@@ -152,12 +152,12 @@ Como es solo, te conviene decidir **desde ya** cuánto de la voz será real vs. 
 
 ## 6. Requerimientos técnicos y motor recomendado
 
-Dado tu perfil (13 años en C#, poca experiencia móvil, necesitas ramificación + guardado + voces + monetización paga en tiendas móviles), esta es la comparación relevante:
+Dado tu perfil (13 años en C#, poca experiencia móvil, necesitas ramificación + guardado + voces + monetización paga en tiendas móviles y PC), esta es la comparación relevante:
 
 ### Opción recomendada: **Unity + Naninovel**
 
 - Naninovel es un framework de novela visual construido sobre Unity en C#. Tiene: sistema de diálogo con ramificación, gestión de personajes/expresiones, CGs, guardado/carga, integración de voces, y exportación nativa a Android/iOS.
-- **Por qué te conviene**: aprovechas directamente tus 13 años de C#, Unity tiene la documentación de publicación a Android/iOS más madura del mercado, y Naninovel te ahorra meses de programar desde cero un motor de diálogo/ramificación/guardado.
+- **Por qué te conviene**: aprovechas directamente tus 13 años de C#, Unity tiene la documentación de publicación a Android/iOS más madura del mercado, y Naninovel te ahorra meses de programar desde cero un motor de diálogo/ramificación/guardado. Bonus relevante ahora que PC (Steam) también es plataforma objetivo: Unity exporta de forma nativa a Windows/Mac/Linux — no es un cambio de stack ni de motor, es una opción de build que ya tenés disponible sin trabajo adicional de arquitectura.
 - Costo: Naninovel es un asset pago (rango de $100–150 USD, versión única), Unity es gratis hasta cierto nivel de ingresos.
 
 ### Alternativa gratuita: **Godot 4 + C# + Dialogic**
@@ -179,15 +179,17 @@ Dado tu perfil (13 años en C#, poca experiencia móvil, necesitas ramificación
 - [ ] Optimización de tamaño de build (las imágenes generadas por IA en alta resolución pueden inflar el peso de la app — hay que definir compresión/resolución final desde el inicio)
 - [ ] Testing en dispositivos de gama media/baja de Android (fragmentación de Android es el mayor riesgo técnico de QA)
 - [ ] Sistema de configuración de texto (velocidad, tamaño de fuente) — importante en móvil
+- [ ] **Multi-idioma**: lanzamiento en español, con el código preparado para sumar idiomas más adelante. Naninovel tiene soporte de localización nativo (scripts, texto de UI, nombres de personajes, audio, fondos con texto) — no requiere arquitectura custom. Único paso obligatorio desde el arranque de la tarea 15: configurar el **Source Locale en español** (Naninovel → Configuration → Localization) antes de generar los primeros scripts `.nani`, para que agregar un idioma nuevo más adelante sea correr la herramienta de localización, no reestructurar el proyecto. El guion en Markdown no necesita ningún cambio de formato por esto — la localización se genera a partir de los `.nani` ya escritos.
 
 ---
 
 ## 7. Consideraciones legales y de tiendas
 
 - **Clasificación de contenido**: al no incluir desnudos (la intimidad se maneja con elipsis/fundido a negro), el juego vuelve a entrar cómodo en las categorías estándar de Google Play y App Store con clasificación "Maduro 17+" — evita el problema de distribución que sí generaba la versión con desnudos. Aun así, hay que completar el cuestionario de contenido de cada tienda con honestidad (temas maduros, romance, violencia si aplica) y verificar las políticas vigentes al momento de publicar, ya que cambian con frecuencia.
-- **Declaración de arte generado por IA**: revisa las políticas vigentes de Google Play y App Store al momento de publicar — ambas plataformas han ido añadiendo requisitos de divulgación para contenido generado por IA.
+- **Declaración de arte generado por IA**: revisa las políticas vigentes de Google Play, App Store y Steam al momento de publicar — las tres plataformas han ido añadiendo requisitos de divulgación para contenido generado por IA.
+- **Steam Direct (PC)**: fee único de $100 USD por juego al enviarlo a través de Steamworks, reembolsable una vez que el juego genera $1,000 de ingresos brutos en la tienda. Split estándar: 70% para vos, 30% para Valve (mejora en tramos de ingresos altos, irrelevante en tu escala inicial). El proceso completo —alta como partner, verificación de identidad, carga del build, revisión— toma un mínimo de 4 a 6 semanas: hay una espera obligatoria de 30 días después de pagar el fee, más el requisito de tener la página de tienda ("Coming Soon") publicada al menos dos semanas antes del lanzamiento. Conviene arrancar este trámite con bastante anticipación al lanzamiento planeado, no a último momento.
+- **Política de privacidad**: obligatoria para publicar en las tres tiendas, incluso para un juego offline simple.
 - **Licencias de música/SFX/voces**: asegúrate de que cualquier librería o herramienta de IA que uses para audio tenga licencia comercial explícita para juegos pagos.
-- **Política de privacidad**: obligatoria para publicar en ambas tiendas, incluso para un juego offline simple.
 
 ---
 
@@ -199,8 +201,8 @@ Dado que sos un equipo de una sola persona, la recomendación es producir en **f
 2. **Fase 1 — Vertical slice (4-6 semanas)**: prólogo completo jugable en el motor, con arte, audio y guardado funcionando de principio a fin. Esto valida el pipeline completo antes de escalar.
 3. **Fase 2 — Producción de rutas (la fase más larga)**: dos bloques, no tres rutas simétricas — primero el bloque de Egis completo (guion a arte a integración), y luego el bloque compartido Hazel/Vaelyr (tramo compartido escrito una sola vez + las dos ramas finales cortas), para poder soltar contenido probado incrementalmente.
 4. **Fase 3 — Finales y pulido**: los 9 finales, galería, ajustes de UI/UX.
-5. **Fase 4 — QA móvil**: pruebas en múltiples dispositivos/tamaños de pantalla, optimización de rendimiento y peso.
-6. **Fase 5 — Lanzamiento**: assets de tienda (capturas, trailer, descripción), configuración de precio, soft launch opcional en un mercado antes del lanzamiento global.
+5. **Fase 4 — QA móvil y PC**: pruebas en múltiples dispositivos/tamaños de pantalla, optimización de rendimiento y peso.
+6. **Fase 5 — Lanzamiento**: assets de tienda (capturas, trailer, descripción) para Google Play, App Store y Steam, configuración de precio, alta en Steamworks (fee, verificación, página "Coming Soon"), soft launch opcional en un mercado antes del lanzamiento global.
 
 ---
 
@@ -211,7 +213,7 @@ Un proyecto exitoso, dado tu perfil y alcance, se ve así:
 - **Un vertical slice jugable** (prólogo completo) en las primeras 6-10 semanas — esto es la señal más importante de que el pipeline (guion → arte IA → Unity/Naninovel → build móvil) funciona de punta a punta.
 - **Consistencia visual de personajes** lograda de forma repetible (no imagen por imagen a mano) antes de escalar a las 3 rutas completas.
 - **Una ruta completa terminada y jugada por testers externos** antes de replicar el proceso en el otro bloque — valida ritmo narrativo, duración real de lectura y calidad de las decisiones. Con la estructura de 2 bloques (Egis; Hazel/Vaelyr), esto aplica primero al Bloque Egis antes de invertir en el Bloque Hazel/Vaelyr completo.
-- **Build estable en al menos 3-4 dispositivos Android de gama distinta** y en iOS, sin errores de guardado/carga.
+- **Build estable en al menos 3-4 dispositivos Android de gama distinta**, en iOS, y en PC (Windows como mínimo), sin errores de guardado/carga.
 - **Listado de tienda completo y honesto** (clasificación, divulgación de IA, política de privacidad) sin fricción de aprobación.
 - **Alcance controlado**: si en algún punto el guion, arte o audio empiezan a superar las estimaciones de la sección 2-5 en más de 30-40%, es señal de recortar (por ejemplo, reducir CGs por final, o compartir más fondos entre rutas) antes de que el proyecto se vuelva inmanejable para una sola persona.
 

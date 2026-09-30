@@ -1,0 +1,90 @@
+; ============================================================
+; PRÓLOGO — ESCENA 2.3: Aula vacía, hora de almuerzo (Hazel)
+; Fuente: 00_Documentacion/Guion/Prologo.md (Borrador 9), líneas 151-188.
+; ============================================================
+
+; Fondo: "Aula de la electiva de arte (Escena 2.3, vacía)" — prompt real dice "natural afternoon
+; light", por eso "Arte - Tarde" y no "Arte - Manana" (este segundo archivo existe en disco pero
+; no está documentado para ninguna escena todavía — no se usa acá, avisar si en realidad iba para
+; otra cosa). Es una locación distinta a la de Escena 1 (Hazel estudia Medicina, no Arqueología).
+@back "Arte - Tarde.LineReveal" time:2
+
+; "Tema de curiosidad" (misterio suave) asignado a esta escena en Lista-Audio.md.
+@stopBgm
+@bgm "Musica/snowflake_dance"
+
+Me quedo en el aula de la electiva de arte, reviso mi vieja libreta con apuntes sobre Vaelyria.
+La mayoría sale corriendo a almorzar, pero no tengo ganas de cruzarme con gente que ya empieza a mirarme raro.
+No estoy solo: Hazel también se quedó, sentada en su lugar de siempre, ya terminó de comer y aprovecha el rato libre para estudiar antes de que vuelva el resto.
+
+; Nombre de Hazel: a diferencia de Marr/Egis, acá no hay ningún momento de "presentación" — el
+; protagonista ya la conoce y la llama por su nombre desde su primera línea, y la narración de
+; arriba también la nombra directamente. Por decisión del usuario, se revela de inmediato sin
+; pasar por "???" (CharactersConfiguration.asset ya tiene su Display Name atado a {NombreHazel}).
+@set NombreHazel="Hazel"
+
+; Nota de arte/dirección (guion L.155): sprite de Hazel = "Estudiando" desde su introducción hasta
+; el cambio a "Sorprendida" más abajo. Nombre de apariencia con el prefijo del personaje
+; (Hazel-estudiando.png), igual que Egis/Agnes — Naninovel no recorta el prefijo del archivo.
+; Animación de entrada (primera aparición del personaje): aparece en pos:60,60 y se desliza hasta
+; su posición final pos:60,-60 en 2 segundos.
+@char Hazel.Hazel-estudiando scale:1 pos:60,60
+@char Hazel pos:60,-60 time:2
+
+; SFX pendiente (Lista-Audio.md): "Ambiente de aula vacía" — silencio con eco leve, loop.
+; SFX pendiente (Lista-Audio.md): "Sonido de escribir en libreta" (reutilizable de Escena 1).
+
+No tengo nada qué perder.
+
+Protagonista: ¿Hazel, cierto? Compartimos la electiva de arte.
+Protagonista: Te quería preguntar algo rápido, si tienes un segundo.
+
+; Acotación de tono (guion L.163, "sin levantar mucho la vista"): sin sprite/apariencia asociada
+; en la nota de arte de esta línea — queda sin equivalente mecánico, referencia para actuación
+; (voz/animación) si se agrega en el futuro.
+Hazel: Depende de la pregunta.
+
+Protagonista: ¿Alguna vez escuchaste el nombre "Vaelyria"?
+Protagonista: Como ciudad, como región, lo que sea.
+
+; Nota de arte/dirección (guion L.169): sprite de Hazel = "Sorprendida" en este instante — sutil,
+; contenida, no exagerada (apenas un parpadeo, una ceja que se mueve). La narración NO lo describe
+; en la primera partida; es una pista puramente visual, solo para quien esté mirando la pantalla.
+@char Hazel.Hazel-estudiando-sorprendida
+; Variante desde la 2ª partida (guion L.184-188): variable global persistente entre partidas —
+; primer uso en todo el guion. Se inicializa de forma defensiva en Escena 1 (@set
+; g_ruta_egis_completada?=false) para que exista siempre, incluso en la primerísima partida.
+; Nota: el nombre real de variable lleva el prefijo "g_" — es el que exige Naninovel para que el
+; valor persista entre partidas nuevas (ver SetCustomVariable, ejemplo "Use global variable ('g_'
+; prefix) to persist the value across sessions"); "ruta_egis_completada" a secas (como está escrito
+; en CLAUDE.md y el documento de diseño) es solo el nombre conceptual, no el literal del engine.
+@if g_ruta_egis_completada
+    Por una fracción de segundo algo le cambia la cara:
+    La mano se le detiene a mitad de un trazo, un parpadeo que dura un poco más de lo normal.
+@endif
+@wait 0.5
+@char Hazel.Hazel-estudiando
+; Acotación de tono (guion L.172, "recuperándose casi de inmediato, con un tono demasiado neutro
+; para ser natural"): sin sprite propio asociado — referencia de actuación para voz/animación futura.
+Hazel: No.
+Hazel: No me suena de nada.
+
+Protagonista: Ah. Bueno, gracias igual.
+
+Me alejo sin darle más vueltas al asunto.
+
+; Nota de arte/dirección (guion L.180): sprite de Hazel = "Pensativa" en cuanto el protagonista se
+; aleja — sostener un instante antes de cortar a la escena siguiente.
+@char Hazel.Hazel-estudiando-pensativa
+@wait 0.5
+
+; Nota de guion (L.182): esta reacción es el gancho de la ruta de Hazel (ver Heroina-C.md). En la
+; primera partida no se explica ni se comenta en el texto bajo ninguna circunstancia — toda la
+; pista vive en el arte; no se agrega ninguna línea extra acá.
+
+@hide Hazel
+
+; ============================================================
+; Fin Escena 2.3 — continúa en Escena 2.4 (Explanada frente al edificio central, atardecer).
+; ============================================================
+@goto Prologo_Escena2_4

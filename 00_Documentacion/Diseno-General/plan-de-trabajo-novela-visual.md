@@ -31,9 +31,9 @@ Plan de tareas en orden sucesivo, agrupado por fases (según el documento de dis
 12. Generar los sprites del protagonista (si aplica) y de las 3 heroínas para las escenas del prólogo (expresiones básicas).
 13. Conseguir/generar la música de fondo y los SFX del prólogo.
 14. Grabar o sintetizar las voces de las líneas del prólogo (si decidiste doblar esta parte).
-15. Implementar el prólogo completo en Unity/Naninovel: texto, personajes, fondos, elección de ruta, audio.
+15. Implementar el prólogo completo en Unity/Naninovel: texto, personajes, fondos, elección de ruta, audio. 🔶 Primer paso antes de generar cualquier script: configurar el Source Locale en español (Naninovel → Configuration → Localization), para que el proyecto quede preparado para sumar idiomas más adelante sin reestructurar nada (ver documento de diseño, sección 6).
 16. Implementar el sistema de guardado/carga (aunque sea básico) y probarlo dentro del prólogo.
-17. Compilar un build de Android (y de iOS si tenés acceso a Mac/certificados) e instalarlo en un dispositivo real.
+17. Compilar un build de Android (y de iOS si tenés acceso a Mac/certificados) e instalarlo en un dispositivo real. 🔶 Opcional en esta fase: como Unity exporta a PC de forma nativa sin trabajo extra, podés probar también un build de Windows si te resulta cómodo, aunque no es obligatorio hasta la Fase 4.
 18. Jugar el prólogo de principio a fin en el dispositivo real y corregir errores de texto, timing, audio o crasheos.
 
 **Entrega de la fase:** prólogo 100% jugable en un dispositivo móvil real, de punta a punta, sin errores críticos.
@@ -45,6 +45,7 @@ Plan de tareas en orden sucesivo, agrupado por fases (según el documento de dis
 **Objetivo de la fase:** completar el contenido de la ruta de Egis y de la ruta compartida Hazel/Vaelyr (con sus dos ramas finales), para poder detectar problemas de ritmo o alcance temprano en vez de al final.
 
 🔶 **Nota de estructura**: a diferencia de una primera versión de este plan, esto ya **no son 3 rutas simétricas e independientes**. Son 2 bloques de producción:
+
 - **Bloque A — Ruta Egis**: completamente independiente, con sus propios 3 finales.
 - **Bloque B — Ruta compartida Hazel/Vaelyr**: un solo tramo principal (la investigación conjunta sobre la verdad de Vaelyria) que se escribe **una sola vez**, seguido de dos ramas finales cortas (Rama Hazel y Rama Vaelyr), cada una con sus propios 3 finales. Escribir el tramo compartido dos veces (una "para" Hazel y otra "para" Vaelyr) sería guion redundante — es la misma escena vista una sola vez, no dos historias paralelas.
 
@@ -53,7 +54,7 @@ Repetir los siguientes pasos **para cada bloque, de a uno por vez** (no en paral
 19. Escribir el guion del bloque:
     - Bloque A (Egis): guion completo hasta el punto donde se separan los 3 finales (~15,000-20,000 palabras).
     - Bloque B: guion del tramo compartido Hazel/Vaelyr hasta la separación (~15,000-20,000 palabras, una sola vez), luego el guion corto de cada rama post-separación (Hazel y Vaelyr, por separado).
-    Marcar explícitamente los puntos de decisión y qué elección/afinidad lleva a qué final.
+      Marcar explícitamente los puntos de decisión y qué elección/afinidad lleva a qué final.
 20. Escribir el guion de los 3 finales de cada heroína del bloque (~1,500-3,000 palabras cada uno).
 21. Listar los "flags"/variables que el motor debe rastrear para ese bloque (qué elecciones y afinidades activan qué final), incluyendo las variables cross-ruta y la variable de progreso persistente entre partidas (`ruta_egis_completada`, ver documento de diseño sección 2).
 22. Generar los fondos nuevos que necesite ese bloque (reutilizando los del prólogo y de otros bloques cuando sea posible).
@@ -79,7 +80,7 @@ Repetir los siguientes pasos **para cada bloque, de a uno por vez** (no en paral
 33. Diseñar y pulir el menú principal, pantalla de título, pantalla de créditos.
 34. Revisión completa de guion (ortografía, coherencia de nombres/flags, continuidad entre elecciones).
 35. Pase de pulido visual: transiciones entre escenas, animaciones de textbox, efectos de UI.
-36. Optimizar tamaño final del build (compresión de imágenes/audio) para que el peso sea razonable en tiendas móviles.
+36. Optimizar tamaño final del build (compresión de imágenes/audio) para que el peso sea razonable en tiendas móviles y en Steam.
 
 **Entrega de la fase:** juego completo, las 3 rutas y 9 finales integrados, galería funcional, build optimizado.
 
@@ -87,9 +88,9 @@ Repetir los siguientes pasos **para cada bloque, de a uno por vez** (no en paral
 
 ## FASE 4 — QA móvil
 
-**Objetivo de la fase:** asegurar que el juego funciona de forma confiable en la variedad de dispositivos Android/iOS reales, no solo en tu dispositivo de prueba.
+**Objetivo de la fase:** asegurar que el juego funciona de forma confiable en la variedad de dispositivos Android/iOS reales y en PC, no solo en tu dispositivo de prueba.
 
-37. Armar una lista de dispositivos objetivo (gama alta, media y baja de Android, más algún iPhone).
+37. Armar una lista de dispositivos objetivo (gama alta, media y baja de Android, más algún iPhone y una PC de referencia para el build de Steam).
 38. Probar instalación, guardado/carga y las 9 rutas de finales en cada dispositivo de la lista.
 39. Medir rendimiento (tiempos de carga, uso de memoria) y ajustar si hay caídas de rendimiento en gama baja.
 40. Revisar el juego en distintos tamaños/proporciones de pantalla (notch, tablets, etc.).
@@ -104,24 +105,25 @@ Repetir los siguientes pasos **para cada bloque, de a uno por vez** (no en paral
 
 **Objetivo de la fase:** publicar el juego correctamente en las tiendas, con todo lo legal y de marketing en regla.
 
-43. Completar el cuestionario de clasificación de contenido en Google Play y App Store (declarando el tono maduro sin contenido explícito).
+43. Completar el cuestionario de clasificación de contenido en Google Play, App Store y Steam (declarando el tono maduro sin contenido explícito).
 44. Declarar el uso de arte generado por IA según las políticas vigentes de cada tienda al momento de publicar.
-45. Escribir la política de privacidad y publicarla (requisito obligatorio de ambas tiendas).
+45. Escribir la política de privacidad y publicarla (requisito obligatorio de las tres tiendas).
 46. Preparar los assets de tienda: ícono, capturas de pantalla, arte de portada, video/trailer si es posible, descripción del juego.
 47. Definir el precio de venta (pago único, según lo decidido).
-48. Configurar las cuentas de desarrollador (Google Play Console y Apple Developer) si no las tenés ya.
-49. Subir el build a modo de prueba cerrada/interna en ambas tiendas y verificar que pasa la revisión técnica.
+48. Configurar las cuentas de desarrollador (Google Play Console, Apple Developer y Steamworks) si no las tenés ya.
+49. Subir el build a modo de prueba cerrada/interna en las tres tiendas y verificar que pasa la revisión técnica. 🔶 Steam tiene su propio calendario: hay una espera obligatoria de 30 días después de pagar el fee de Steam Direct ($100 USD, recuperable), más el requisito de tener la página "Coming Soon" publicada al menos dos semanas antes del lanzamiento — conviene arrancar este trámite con varias semanas de anticipación respecto a Google Play/App Store, que son más rápidos.
 50. (Opcional) Hacer un soft launch en un mercado más pequeño antes del lanzamiento global, para detectar problemas con usuarios reales.
 51. Lanzamiento global.
 52. Monitorear reseñas y crashes la primera semana, y preparar un parche rápido de corrección si aparecen problemas críticos.
 
-**Entrega de la fase:** juego publicado y disponible para compra en Android/iOS.
+**Entrega de la fase:** juego publicado y disponible para compra en Android/iOS/PC (Steam).
 
 ---
 
 ## Nota sobre el orden
 
 Las fases están pensadas para ejecutarse en este orden porque cada una **valida** un supuesto antes de invertir tiempo en escalarlo:
+
 - Fase 0 valida que el pipeline de arte/audio/motor es viable.
 - Fase 1 valida que todo el pipeline junto funciona en un dispositivo real.
 - Fase 2 valida ritmo narrativo y calidad bloque por bloque (Egis, y luego Hazel/Vaelyr), antes de comprometerte a ambos completos.
