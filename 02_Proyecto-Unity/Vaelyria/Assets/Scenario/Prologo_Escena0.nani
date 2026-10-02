@@ -5,7 +5,7 @@
 ; (como aparece en CLAUDE.md y el documento de diseño) es el nombre conceptual, no el literal.
 @set g_ruta_egis_completada?=false
 
-@back "Universidad - Manana" time:2
+@back "Universidad - Manana.LineReveal" time:2
 
 - La Universidad Pública de Vantia.
 
@@ -13,6 +13,15 @@ Una prestigiosa universidad ubicada en la próspera ciudad de Vantia.
 Ha sido reconocida por la calidad de sus egresados.
 Estoy seguro de que todo padre quiere que sus hijos estudien acá.
 
+Quise venir a esta universidad, en parte por su prestigio, pero también para obtener información de cierta ciudad que, según mis cálculos, debería estar justo acá.
 
 Desde que recuerdo, he estado interesado en la historia del mundo.
-Grandes ciudades e imperios han nacido, prosperado y caído a travez del tiempo.
+Grandes ciudades e imperios han nacido, prosperado y caído a través del tiempo.
+El ciclo siempre se repite, se unen unos cuantos habitantes, se construye una ciudad, se desarrolla una cultura, y luego todo se derrumba.
+Quienes conocen la historia, ven venir la caída de una civilización antes de que ocurra.
+Pero normalmente, no tienen el poder para evitarlo.
+
+Aún así, es imperdonable dejar que la historia se pierda, aunque solo sea una ciudad remota.
+No he encontrado mucha información sobre esta ciudad, pero yo mismo me encargaré de mantener viva su historia.
+
+@goto Prologo_Escena1

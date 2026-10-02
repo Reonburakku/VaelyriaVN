@@ -152,16 +152,7 @@ Termino un día más
 Pruebo en la entrada, con el personal de seguridad y algunos estudiantes que van llegando tarde.
 Uno de los guardias, más por cortesía que por interés real, me escucha hasta el final.
 
-; Nota de arte/dirección (guion L.136): sprite de guardia genérico = "Lástima" directamente (sin
-; fase "Idle" previa, a diferencia de Marr/Bibliotecaria). Mismo criterio de azar que los otros
-; dos destinos. Nota de producción: Lista-Expresiones-Sprites.md solo tiene "Lástima" prompteado
-; para Extra Genérico Masculino por ahora (Borrador 9 asumía guardia masculino) — si el azar cae
-; en Femenino, falta ese prompt todavía; avisar para generarlo si hace falta antes de este destino.
-@random
-    @group
-        Celador: Llevo doce años acá y nunca escuché ese nombre. Lo siento.
-    @group
-        Celador: Llevo doce años acá y nunca escuché ese nombre. Lo siento.
+Guardia: Llevo doce años acá y nunca escuché ese nombre. Lo siento.
 
 ; Acotación de tono (guion L.138, "(pensamiento)"): mismo tratamiento en cursiva que usamos con
 ; el protagonista en la Escena 1.

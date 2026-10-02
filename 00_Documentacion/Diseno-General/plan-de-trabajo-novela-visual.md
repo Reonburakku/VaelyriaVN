@@ -45,7 +45,6 @@ Plan de tareas en orden sucesivo, agrupado por fases (según el documento de dis
 **Objetivo de la fase:** completar el contenido de la ruta de Egis y de la ruta compartida Hazel/Vaelyr (con sus dos ramas finales), para poder detectar problemas de ritmo o alcance temprano en vez de al final.
 
 🔶 **Nota de estructura**: a diferencia de una primera versión de este plan, esto ya **no son 3 rutas simétricas e independientes**. Son 2 bloques de producción:
-
 - **Bloque A — Ruta Egis**: completamente independiente, con sus propios 3 finales.
 - **Bloque B — Ruta compartida Hazel/Vaelyr**: un solo tramo principal (la investigación conjunta sobre la verdad de Vaelyria) que se escribe **una sola vez**, seguido de dos ramas finales cortas (Rama Hazel y Rama Vaelyr), cada una con sus propios 3 finales. Escribir el tramo compartido dos veces (una "para" Hazel y otra "para" Vaelyr) sería guion redundante — es la misma escena vista una sola vez, no dos historias paralelas.
 
@@ -54,7 +53,7 @@ Repetir los siguientes pasos **para cada bloque, de a uno por vez** (no en paral
 19. Escribir el guion del bloque:
     - Bloque A (Egis): guion completo hasta el punto donde se separan los 3 finales (~15,000-20,000 palabras).
     - Bloque B: guion del tramo compartido Hazel/Vaelyr hasta la separación (~15,000-20,000 palabras, una sola vez), luego el guion corto de cada rama post-separación (Hazel y Vaelyr, por separado).
-      Marcar explícitamente los puntos de decisión y qué elección/afinidad lleva a qué final.
+    Marcar explícitamente los puntos de decisión y qué elección/afinidad lleva a qué final.
 20. Escribir el guion de los 3 finales de cada heroína del bloque (~1,500-3,000 palabras cada uno).
 21. Listar los "flags"/variables que el motor debe rastrear para ese bloque (qué elecciones y afinidades activan qué final), incluyendo las variables cross-ruta y la variable de progreso persistente entre partidas (`ruta_egis_completada`, ver documento de diseño sección 2).
 22. Generar los fondos nuevos que necesite ese bloque (reutilizando los del prólogo y de otros bloques cuando sea posible).
@@ -74,7 +73,7 @@ Repetir los siguientes pasos **para cada bloque, de a uno por vez** (no en paral
 
 **Objetivo de la fase:** unificar las 3 rutas en un solo producto coherente y agregar las features que dan sensación de "juego terminado".
 
-30. Implementar el sistema de galería de CGs desbloqueados.
+30. Implementar el sistema de galería de CGs desbloqueados, y el de la "Libreta de anotaciones" (menú principal → Finales) — desbloqueo global tipo galería, con una pista por final alcanzado (ver `Libreta-de-Anotaciones.md`).
 31. Revisar consistencia de tono/calidad entre las 3 rutas (que ninguna se sienta claramente más corta o menos pulida que las otras).
 32. Ajustar configuración de texto (velocidad, tamaño de fuente) y accesibilidad básica.
 33. Diseñar y pulir el menú principal, pantalla de título, pantalla de créditos.
@@ -123,7 +122,6 @@ Repetir los siguientes pasos **para cada bloque, de a uno por vez** (no en paral
 ## Nota sobre el orden
 
 Las fases están pensadas para ejecutarse en este orden porque cada una **valida** un supuesto antes de invertir tiempo en escalarlo:
-
 - Fase 0 valida que el pipeline de arte/audio/motor es viable.
 - Fase 1 valida que todo el pipeline junto funciona en un dispositivo real.
 - Fase 2 valida ritmo narrativo y calidad bloque por bloque (Egis, y luego Hazel/Vaelyr), antes de comprometerte a ambos completos.

@@ -113,14 +113,12 @@ A partir de acá, el ciclo semanal se repite (Lunes a Domingo) durante el resto 
 | Restaurante                     | Universidad      | Lunes-Sábado                |
 | Jardín                         | Universidad      | Lunes-Sábado                |
 | Entrada                         | Universidad      | Lunes-Sábado                |
-| Explanada                       | Universidad      | Lunes-Sábado                |
 | Terraza (torre este)            | Universidad      | Lunes-Sábado                |
 | Sala de profesores              | Universidad      | Lunes-Sábado                |
-| Cafetería                      | Ciudad           | Solo domingo                 |
+| Cafetería                       | Ciudad           | Solo domingo                 |
 | Mirador de la ciudad            | Ciudad, nocturno | Lunes-Sábado, solo de noche |
 | Tienda de ropa                  | Ciudad           | Solo domingo                 |
 | Plaza central / mercado         | Ciudad           | Solo domingo                 |
-| Estanque junto a la universidad | Ciudad           | Solo domingo                 |
 
 ### Matriz de lugar × día — quién está dónde
 
@@ -137,7 +135,7 @@ A partir de acá, el ciclo semanal se repite (Lunes a Domingo) durante el resto 
 | Plaza central / mercado | 🚫    | 🚫    | 🚫    | 🚫    | 🚫              | 🚫             | Hazel           |
 | Cafetería              | 🚫    | 🚫    | 🚫    | 🚫    | 🚫              | 🚫             | Egis            |
 
-✅ Terraza de Agnes y Cafetería de Egis, confirmados — esta última pasó de nocturna entre semana a domingo. **Plaza central / mercado** queda como el único lugar de la matriz todavía sin heroína asignada. Aula de Arqueología, Entrada, Explanada, Sala de profesores, Mirador de la ciudad y Estanque junto a la universidad siguen en la tabla de lugares pero salieron de la matriz — quedan como locaciones de uso narrativo puntual (por ejemplo, Sala de profesores para la escena fija del lunes de apertura), no seleccionables dentro del loop diario.
+✅ Terraza de Agnes y Cafetería de Egis, confirmados — esta última pasó de nocturna entre semana a domingo. **Plaza central / mercado** queda como el único lugar de la matriz todavía sin heroína asignada. Aula de Arqueología, Entrada, Sala de profesores y Mirador de la ciudad siguen en la tabla de lugares pero salieron de la matriz — quedan como locaciones de uso narrativo puntual (por ejemplo, Sala de profesores para la escena fija del lunes de apertura), no seleccionables dentro del loop diario. Explanada y Estanque junto a la universidad se eliminaron directamente: no se van a usar como sitios de la historia.
 
 ### Estructura de escena por visita
 
@@ -186,4 +184,5 @@ Con esto, el techo real de puntos de Egis en este bloque queda en **+9** (6 prop
 - ✅ Detonante de la revelación en el Acto 2: resuelto — secuencia de la caída, la huida, y la búsqueda en la casa de Egis (ver detalle arriba).
 - ✅ Los "3 intentos" para encontrar la casa de Egis son esa misma noche, seguidos — no días separados del loop.
 - 🔶 "Casa de Egis" y sus sub-espacios (sala, habitación de Egis, habitación de la madre) son ubicaciones nuevas, fuera de la rotación diaria normal — sumar a la lista de fondos cuando lleguemos a esa etapa de producción.
+- ✅ Los 4 disparadores de fallo del bad ending "Egis desaparecida" comparten un mismo texto/escena, sin variantes narrativas — ver `Lista-Bad-Endings.md`.
 - 🔶 Este bloque ya tiene dos tipos de Bad Ending distintos (graduarse sin pareja / perder a Egis por no encontrarla a tiempo) — el conteo de "9 finales" del documento de diseño sigue siendo válido para los finales completos, pero vale la pena dejar anotado en ese documento que existen bad endings adicionales como categoría aparte, para que no se pierda de vista al planificar los otros bloques.
